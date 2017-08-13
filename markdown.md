@@ -8,8 +8,6 @@
 
 ​	Markdown 标记转成HTML的样式每个网站有自己的风格, 但整体的标记格式是统一的. 我们以github来保存相关的文档, 所以我们以github的为样式为标准.
 
-
-
 ## 1、目录列表Table of Contents（TOC）
 
 ​	输入[toc]然后回车，将会产生一个目录，这个目录抽取了文章的所有标题，自动更新内容。
@@ -231,11 +229,11 @@ int main(void)
 
 `:-1:`		:-1:
 
-`:happy:`	:happy:
+`:happy:`	　:happy:
 
-`:sad:`		:sad:
+`:sad:`		　　:sad:
 
-`:cry:`		:cry:
+`:cry:`		　　:cry:
 
 ## 11、数学表达式
 
@@ -245,7 +243,7 @@ int main(void)
 
 将产生如下的数学表达式：
 
-$lim_{x \to \infty} \ exp(-x)=0$
+$$lim_{x \to \infty} \ exp(-x)=0$$
 
 ​	Typora支持Latex的公式编辑，公式编辑几乎和代码编辑的使用方法相同，同样分行内公式和行间公式，行内公式用两个`$`包裹起来，行间公式可以使用快捷键`command + alt + b`和`$$ + enter`插入：
 
@@ -255,7 +253,7 @@ $$\mathbf{V}_1 \times \mathbf{V}_2 =  \begin{vmatrix} \mathbf{i} & \mathbf{j} & 
 
 效果：
 
-$$\mathbf{V}_1 \times \mathbf{V}_2 =  \begin{vmatrix} \mathbf{i} & \mathbf{j} & \mathbf{k} \\\frac{\partial X}{\partial u} &  \frac{\partial Y}{\partial u} & 0 \\\frac{\partial X}{\partial v} &  \frac{\partial Y}{\partial v} & 0 \\\end{vmatrix}$$
+ $$\mathbf{V}_1 \times \mathbf{V}_2 =  \begin{vmatrix} \mathbf{i} & \mathbf{j} & \mathbf{k} \\\frac{\partial X}{\partial u} &  \frac{\partial Y}{\partial u} & 0 \\\frac{\partial X}{\partial v} &  \frac{\partial Y}{\partial v} & 0 \\\end{vmatrix}$$
 
 ### 下标
 
@@ -267,7 +265,7 @@ $${H}_2O$$
 
 效果：
 
-$${H }_2 O$$
+ $${H }_2 O$$
 
 ### 上标
 
@@ -277,7 +275,7 @@ $${X}^2$$
 
 效果：
 
-$${X}^2$$
+ $${X}^2$$
 
 ## 12、水平分割线
 
