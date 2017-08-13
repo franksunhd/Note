@@ -253,7 +253,7 @@ $$\mathbf{V}_1 \times \mathbf{V}_2 =  \begin{vmatrix} \mathbf{i} & \mathbf{j} & 
 
 效果：
 
- $\mathbf{V}_1 \times \mathbf{V}_2 =  \begin{vmatrix} \mathbf{i} & \mathbf{j} & \mathbf{k} \\\frac{\partial X}{\partial u} &  \frac{\partial Y}{\partial u} & 0 \\\frac{\partial X}{\partial v} &  \frac{\partial Y}{\partial v} & 0 \\\end{vmatrix}$
+ $$\mathbf{V}_1 \times \mathbf{V}_2 =  \begin{vmatrix} \mathbf{i} & \mathbf{j} & \mathbf{k} \\\frac{\partial X}{\partial u} &  \frac{\partial Y}{\partial u} & 0 \\\frac{\partial X}{\partial v} &  \frac{\partial Y}{\partial v} & 0 \\\end{vmatrix}$$
 
 ### 下标
 
@@ -265,7 +265,7 @@ $${H}_2O$$
 
 效果：
 
- ${H }_2 O$
+ $${H }_2 O$$
 
 ### 上标
 
@@ -275,7 +275,7 @@ $${X}^2$$
 
 效果：
 
- ${X}^2$
+ $${X}^2$$
 
 ## 12、水平分割线
 
