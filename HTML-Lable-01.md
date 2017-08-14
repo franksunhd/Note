@@ -2,7 +2,7 @@
 
 [TOC]
 
-###		1.复习Linux的基本命令
+### 1.复习Linux的基本命令
 
 －文件的基本操作
 
@@ -23,22 +23,22 @@
 
 －文档的归档和压缩
 
-- 使用gzip和gunzip对[文件]()进行压缩和解压缩(.gz)
+- 使用gzip和gunzip对[文件](#)进行压缩和解压缩(.gz)
   - 压缩：gzip   filename
   - 解压缩：gunzip   filename
-- 使用bzip2和bunzip2对[文件]()进行压缩和解压缩(.bz2)
+- 使用bzip2和bunzip2对[文件](#)进行压缩和解压缩(.bz2)
   - 压缩：bzip2   filename
   - 解压缩：bunzip2   filename
-- 使用tar对[文件和目录]()进行压缩和解压缩
+- 使用tar对[文件和目录](#)进行压缩和解压缩
   - 压缩：（Ｃ:表示创建；F:表示文件目录；j	: bz2格式  ;  J  :  xz格式）
     - tar     czf     filename.tar.gz    filename
-    - tar     cjf      filename.tar.bz2     filename
-    - tar     cJf      filename.tar.xz    filename
+    - tar     cjf     filename.tar.bz2   filename
+    - tar     cJf     filename.tar.xz    filename
   - 解压缩（V : 看过程）
     - tar   xzf   filename.tar.gz
     - tar   xvf   fimename.tar.[ ]   (想解压成什么格式就写什么)
 
-###2.安装HTML开发工具
+### 2.安装HTML开发工具
 
 －	安装atoma编辑器：
 
@@ -102,7 +102,7 @@ $ sudo apt-get install shutter -y
 - 后缀名仅仅决定了文件的打开方式
 - 真正决定文本类型的是文件的内容
 
-####HTML发展
+#### HTML发展
 
 - 超文本标记语言（第一版）——在1993年6月作为互联网工程工作小组（IETF）工作草案发布（并非标准）：
 - HTML 2.0——1995年11月作为RFC 1866发布，在RFC 2854于2000年6月发布之后被宣布已经过时
@@ -113,14 +113,14 @@ $ sudo apt-get install shutter -y
 
 ![](https://nts.newbieol.com/static/k111/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/class-002/image/html5.jpg)
 
-###5.HTML结构
+### 5.HTML结构
 
 ```html
 示例代码：
 <!DOCTYPE>
 <html>  -->html是一个双标签 开始标签
 <head>
-<meta http-equiv="Content-Type" 				content="text/html;charset=UTF-8" />
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
 <title></title> -->可能是标题
 </head>
 <body>-->用来存放页面中的内容
@@ -129,16 +129,16 @@ $ sudo apt-get install shutter -y
 </html> -->结束标签
 ```
 
-####了解格式中每个标签的含义
+#### 了解格式中每个标签的含义
 
 ```html
 <!DOCTYPE　html>   ---->文档类型声明DOCTYPE用于声明文档类型，
-					告诉浏览器用什么标准去解析该页面！！
-<html></html> ---->整个文档页面
-<meta/>      ---->设置页面编码格式，关键字，以及页面的描述
-<title></title> --------->标题部分
-<head></head>   ------>页面的头部分,用于对页面进行设置
-<body></body>   ------>页面的主体部分用于显示页面内容
+			告诉浏览器用什么标准去解析该页面！！
+<html></html> 	   ---->整个文档页面
+<meta/>            ---->设置页面编码格式，关键字，以及页面的描述
+<title></title>    ---->标题部分
+<head></head>      ---->页面的头部分,用于对页面进行设置
+<body></body>      ---->页面的主体部分用于显示页面内容
 ```
 
 ![](https://nts.newbieol.com/static/k111/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/class-002/image/html_struct1.png)
@@ -152,21 +152,19 @@ $ sudo apt-get install shutter -y
 
 #### 常见标签学习
 
-<!-- 注意使用语义化标签--!>
+|标签|格式|
+|:----:|:---------------------------:|
+|段落|\<p>\</p>|
+|标题|h1－h6|
+|水平|hr|
+|换行|\<br>|
+|加粗|\<b>\</b>/\<strong>\</strong>|
+|倾斜|\<i>\</i>/\<em>\</em>|
+|删除线|\<s>\</s>/\<del>\</del>|
+|下划线|\<u>\</u>/\<ins>\</ins>|
+| 原始样式显示 |\<pre>\</pre>|
 
-|   标签   |              格式               |
-| :----: | :---------------------------: |
-|   段落   |           \<p>\</p>           |
-|   标题   |             h1－h6             |
-|  水平线   |              hr               |
-|   换行   |             \<br>             |
-|   加粗   | \<b>\</b>/\<strong>\</strong> |
-|   倾斜   |     \<i>\</i>/\<em>\</em>     |
-|  删除线   |    \<s>\</s>/\<del>\</del>    |
-|  下划线   |    \<u>\</u>/\<ins>\</ins>    |
-| 原始样式显示 |         \<pre>\</pre>         |
-
-####图像标签img
+#### 图像标签img
 
 －	HTML网页中任何元素的实现都要依靠HTML标记，要想在网页中显示图像就需要使用图像标记。
 
@@ -176,30 +174,29 @@ $ sudo apt-get install shutter -y
 
 
 
-|  属性   |      作用       |
-| :---: | :-----------: |
-| title |      标题       |
-|  src  |      路径       |
-|  alt  | 图像不正常显示时的文本提示 |
+|属性|作用|
+|:---:|:-----------:|
+|title|标题|
+|src|路径|
+|alt|图像不正常显示时的文本提示|
 
 #### 创建超链接及锚点
 
-－	在HTML中创建[超链接]()非常简单，只需用标记环绕需要被链接的对象即可，其基本语法格式如下：
+－	在HTML中创建[超链接](#)非常简单，只需用标记环绕需要被链接的对象即可，其基本语法格式如下：
 
 ```html
-<a href="www.baidu.com" target="_blank">百度</a>
-												<!--绝对路径-->
-<a href="./home/01.html" target="_blank">我的电脑</a>
-												<!--相对路径-->
+<a href="www.baidu.com" target="_blank">百度</a>			<!--绝对路径-->
+<a href="./home/01.html" target="_blank">我的电脑</a>	　　　　<!--相对路径-->
 <a href="#">空链接跳转</a>
 
 －　href：用于指定链接目标的url地址，当为<a>标记应用href属性时，它就具有了超链接的功能。href必须有，否则没有来链接效果
   
-－　target：用于指定链接页面的打开方式，其取值有_self和_blank两种，		　_self为默认值，
+－　target：用于指定链接页面的打开方式，其取值有_self和_blank两种，		　
+	  _self为默认值，
 	　_blank为在新窗口中打开方式。
 ```
 
-－	通过创建[锚点链接]()，用户能够快速定位到目标内容。
+－	通过创建[锚点链接](#)，用户能够快速定位到目标内容。
 
 ```html
 <!-- 锚点，跳到指定位置  -->
@@ -211,7 +208,7 @@ $ sudo apt-get install shutter -y
     id属性值不要重复，必须保证在一个页面中唯一！！！！！！
     -->
 	<a href="#p1">跳到p1位置</a>				<!--当前页-->
-    <a href="./05.html#p2">跳到p2位置</a>		<!--其它页-->
+        <a href="./05.html#p2">跳到p2位置</a>		        <!--其它页-->
 ```
 
 #### HTML特殊字符
@@ -245,7 +242,7 @@ $ sudo apt-get install shutter -y
 －	无序列表的各个列表项之间没有顺序级别之分，是并列的。其基本语法格式是:
 
 ```html
-<ul>							<!--定义无序列表-->
+<ul>					　　　<!--定义无序列表-->
   <li>列表项一</li>				　<!--描述具体的列表项-->
   <li>列表项二</li>
   <li>列表项三</li>
