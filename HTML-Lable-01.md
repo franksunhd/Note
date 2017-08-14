@@ -2,7 +2,7 @@
 
 [TOC]
 
-###		1.复习Linux的基本命令
+### 1.复习Linux的基本命令
 
 －文件的基本操作
 
@@ -38,7 +38,7 @@
     - tar   xzf   filename.tar.gz
     - tar   xvf   fimename.tar.[ ]   (想解压成什么格式就写什么)
 
-###2.安装HTML开发工具
+### 2.安装HTML开发工具
 
 －	安装atoma编辑器：
 
@@ -102,7 +102,7 @@ $ sudo apt-get install shutter -y
 - 后缀名仅仅决定了文件的打开方式
 - 真正决定文本类型的是文件的内容
 
-####HTML发展
+#### HTML发展
 
 - 超文本标记语言（第一版）——在1993年6月作为互联网工程工作小组（IETF）工作草案发布（并非标准）：
 - HTML 2.0——1995年11月作为RFC 1866发布，在RFC 2854于2000年6月发布之后被宣布已经过时
@@ -113,7 +113,7 @@ $ sudo apt-get install shutter -y
 
 ![](https://nts.newbieol.com/static/k111/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/class-002/image/html5.jpg)
 
-###5.HTML结构
+### 5.HTML结构
 
 ```html
 示例代码：
@@ -129,7 +129,7 @@ $ sudo apt-get install shutter -y
 </html> -->结束标签
 ```
 
-####了解格式中每个标签的含义
+#### 了解格式中每个标签的含义
 
 ```html
 <!DOCTYPE　html>   ---->文档类型声明DOCTYPE用于声明文档类型，
@@ -166,7 +166,7 @@ $ sudo apt-get install shutter -y
 |  下划线   |    \<u>\</u>/\<ins>\</ins>    |
 | 原始样式显示 |         \<pre>\</pre>         |
 
-####图像标签img
+#### 图像标签img
 
 －	HTML网页中任何元素的实现都要依靠HTML标记，要想在网页中显示图像就需要使用图像标记。
 
@@ -176,11 +176,11 @@ $ sudo apt-get install shutter -y
 
 
 
-|  属性   |      作用       |
-| :---: | :-----------: |
-| title |      标题       |
-|  src  |      路径       |
-|  alt  | 图像不正常显示时的文本提示 |
+|属性|作用|
+|:---:|:-----------:|
+|title|标题|
+|src|路径|
+|alt|图像不正常显示时的文本提示|
 
 #### 创建超链接及锚点
 
