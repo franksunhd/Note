@@ -1,4 +1,4 @@
-## CSS层叠样式表
+## CSS层叠样式表/选择器/样式类型/三大特性
 
 [TOC]
 
@@ -293,7 +293,15 @@ div.p {
   </body>
 ```
 
-#### 伪类
+#### 伪类选择符
+
+##### E:link
+
+##### E:visited
+
+##### E:hover
+
+##### E:active
 
 ```html
 <!--
@@ -304,6 +312,15 @@ div.p {
     这四个伪类在a元素要想都有效果，需要按照顺序：link  visited hover active
 -->
 a:link {
+  
+}
+a:visited {
+  
+}
+a:hover {
+  
+}
+a:active {
   
 }
 ```
@@ -354,6 +371,194 @@ a:link {
 	<!--只有hover(悬停)，和active(按下)显示，其余两个没有效果-->
     <div class="one">div的颜色变化</div>
   </body>
+```
+
+##### E:checked(只适用于radio和checked类型)
+
+```html
+<style>
+      input {
+        width: 50px;
+        height: 50px;
+      }
+
+      input:checked + span {
+        background: pink;
+      }
+
+      input:checked + span::before {
+        content: "我被选中了";
+      }
+</style>
+<input type="checkbox">
+<span></span>
+<!--input复选框被选中之后,span标签内部的最前面添加文本-->
+```
+
+##### E:target 被锚点中之后 的样式
+
+```html
+<style>
+      /*被锚点中之后，的样式*/
+      p:target {
+        font-size: 50px;
+        color: red;
+      }
+</style>
+<a href="#p1">锚点</a>
+<p id="p1">闪光灯看见到很快就会</p>
+<!--结果为点击锚点链接,p标签的字体变大,颜色变红-->
+```
+
+##### E:empty 内容为空的元素被选中
+
+```html
+<style>
+/* 内容为空的元素会被 选中 empty*/
+      .one:empty::before {
+        content: "我是空的";
+      }
+
+</style>
+<div class="one">空间商客户开始角度好看见好看</div>
+    <div class="one"></div>
+    <div class="one"></div>
+<!--结果为下面的两个div中添加了"我是空的"-->
+```
+
+##### E:enabled 匹配可用状态的元素
+
+##### E:disabled 匹配不可用状态的元素 
+
+```html
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+<meta charset="utf-8" />
+<title>用户界面(UI)元素状态伪类选择符 E:enabled_CSS参考手册_web前端开发参考手册系列</title>
+<meta name="author" content="Joy Du(飘零雾雨), dooyoe@gmail.com, www.doyoe.com" />
+<style>
+li {
+	padding: 3px;
+}
+input[type="text"]:enabled {
+	border: 1px solid #090;
+	background: #fff;
+	color: #000;
+}
+input[type="text"]:disabled {
+	border: 1px solid #ccc;
+	background: #eee;
+	color: #ccc;
+}
+</style>
+</head>
+<body>
+<form method="post" action="#">
+<fieldset>
+	<legend>E:enabled与E:disabled</legend>
+	<ul>
+		<li><input type="text" value="可用状态" /></li>
+		<li><input type="text" value="可用状态" /></li>
+		<li><input type="text" value="禁用状态" disabled="disabled" /></li>
+		<li><input type="text" value="禁用状态" disabled="disabled" /></li>
+	</ul>
+</fieldset>
+</form>
+</body>
+</html>
+```
+
+#### 伪对象选择符
+
+##### E:first-letter/E::first-letter 设置对象内第一个字符的样式
+
+```html
+<style>
+      .one::first-letter {
+       font-size: 50px;
+       font-weight: bolder;
+     }
+</style>
+<p class="one">
+      我爱你 中国  <br>
+      I love you China <br>
+</p>
+<!--结果为"我"变大变粗-->
+```
+
+##### E:first-line/E::first-line 设置对象内第一行字符的样式
+
+```html
+<style>
+      .one::first-letter {
+       font-size: 50px;
+       font-weight: bolder;
+     }
+</style>
+<p class="one">
+      我爱你 中国  <br>
+      I love you China <br>
+</p>
+<!--结果为"我爱你 中国"变大变粗-->
+```
+
+##### E:before/E::before  选中元素内部的头部 ,必须和content配合使用
+
+##### E:after/E::after  选中元素内部的尾部 ,必须和content配合使用
+
+```html
+<style>
+/* 内容为空的元素会被 选中 empty*/
+      .one:empty::before {
+        content: "我是空的before";
+      }
+  .one:empty::after {
+        content: "我是空的after";
+      }
+
+</style>
+<div class="one">空间商客户开始角度好看见好看</div>
+    <div class="one"></div>
+    <div class="one"></div>
+<!--结果为下面的两个div中添加了"我是空的before 我是空的after"-->
+```
+
+##### E:placeholder 设置对象文字占位符的样式。
+
+```html
+<style>
+/*
+     浏览器的兼容性问题
+*/
+     .two::-webkit-input-placeholder{
+       color: blue;
+     }
+
+     .two::-ms-input-placeholder {
+       color: blue;
+     }
+
+     .two::-moz-placeholder {		/*Firefox 的兼容性写的时候,不写"-input"*/
+       color: blue;
+     }
+</style>
+<input class="two" type="text" placeholder="邮箱/用户名/手机号">
+<!--input文本框颜色变为蓝色,不要考虑浏览器的兼容性问题-->
+```
+
+##### E:selection  设置对象被选择时的样式
+
+- 需要注意的是，::selection只能定义被选择时的[background-color](http://css.doyoe.com/properties/background/background-color.htm)，[color](http://css.doyoe.com/properties/color/color.htm)及[text-shadow](http://css.doyoe.com/properties/text-decoration/text-shadow.htm)(IE11尚不支持定义该属性)。
+
+```html
+<style>
+.two::selection {
+       color: red;
+       background: blue;
+     }
+</style>
+<!--当对象选择时,可以设置选中字体的颜色和背景颜色-->
 ```
 
 ### 5. CSS三种样式类型
@@ -416,7 +621,7 @@ a:link {
 
 ### 6. CSS的三大特性
 
-#### 继承
+#### 继承	[CSS可以和不可以继承的属性](./CSS-04.md)
 
 -　就是页面中的一些标签的属性可以继承给子标签,但是继承还是限制的,比如a的颜色，块级元素的高度等等。
 -　一般情况下，所有的与文字图片的大小样式相当的属性都可以继承:font-x,line-x,一些标签的宽高也可以继承。
@@ -592,4 +797,12 @@ a:link {
 ```
 
 ## 补充内容
+
+### 伪类和伪对象(元素)的区别
+
+- 伪类本质上是为了弥补常规CSS选择器的不足，以便获取到更多信息；
+- 伪元素本质上是创建了一个有内容的**虚拟容器**,它本身只是基于元素的抽象，并不存在于文档中；
+- CSS3中伪类和伪元素的语法不同；
+- 可以同时使用多个伪类，而只能同时使用一个伪元素；
+- 一个选择器**只能使用一个伪元素**，并且**伪元素必须处于选择器语句的最后**。
 
