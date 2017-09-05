@@ -2,27 +2,34 @@
 
 [TOC]
 
-### 1.盒子模型
+### 1.盒子模型(有两种/border-box/centent-box)
 
-－　所谓盒子模型就是把HTML页面中的元素看作是一个矩形的盒子，也就是一个盛装内容的容器。每个矩形都由元素的内容、内边距（padding）、边框（border）和外边距（margin）组成。
+- 　所谓盒子模型就是把HTML页面中的元素看作是一个矩形的盒子，也就是一个盛装内容的容器。每个矩形都由元素的内容、内边距（padding）、边框（border）和外边距（margin）组成。
 
 ![](https://nts.newbieol.com/static/k111/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/class-004/image/box.jpg)
 
 
 
-－	**如果把手机想象成HTML元素，那么手机盒子就是一个CSS盒子模型，其中手机为CSS盒子模型的内容，填充泡沫的厚度为CSS盒子模型的内边距，纸盒的厚度为CSS盒子模型的边框。 **
-
-－	多个手机放在一起时
+- **如果把手机想象成HTML元素，那么手机盒子就是一个CSS盒子模型，其中手机为CSS盒子模型的内容，填充泡沫的厚度为CSS盒子模型的内边距，纸盒的厚度为CSS盒子模型的边框。 **
+- 多个手机放在一起时
 
 ![](https://nts.newbieol.com/static/k111/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/class-004/image/box1.jpg)
 
-－	最终的网页就是有多个盒子组成。
+- 最终的网页就是有多个盒子组成。
 
 ### 2.盒子宽度和高度的计算
 
-Width  =  border_left  +  padding_left  +  width  +  padding_right  + border_right ;
+#### centent-box(内容宽高固定)
 
-Height =  border_top  + padding_top  +  Height + padding_ bottom + border_bottom ;
+总体Width  =  border_left  +  padding_left  +  内容width(固定)  +  padding_right  + border_right ;
+
+总体Height =  border_top  + padding_top  +  内容Height(固定) + padding_ bottom + border_bottom ;
+
+#### border-box(总体宽高固定)
+
+总体Width(固定)  =  border_left  +  padding_left  +  内容width  +  padding_right  + border_right ;
+
+总体Height(固定) =  border_top  + padding_top  +  内容Height + padding_ bottom + border_bottom ;
 
 ### 3. 边框属性 border
 
@@ -30,8 +37,8 @@ Height =  border_top  + padding_top  +  Height + padding_ bottom + border_bottom
 
 
 - border-width	边框宽度
-- border-style           边框样式
-- border-color           边框颜色
+- border-style          边框样式
+- border-color         边框颜色
 
 ```html
 以上边框为例，其余方向类似
@@ -155,9 +162,72 @@ Height =  border_top  + padding_top  +  Height + padding_ bottom + border_bottom
 
 －　**父子关系的子完全居中问题（4种方法）**
 
-- **设置margin:**	给父元素加１像素边框/ 给父元素加１像素内边距(padding)，，父元素对应减去２像素．设置margin:  上下像素差　auto ;
-- **设置padding:**  只给子元素设置padding值，对应的宽和高减去相应值
-- 3------------------------------------------
+- **设置margin:**	给父元素加１像素边框/ 给父元素加１像素内边距(padding)，，父元素对应减去２像素．设置margin:  计算上下像素的差 auto ;
+
+
+```html
+margin: 150px auto;
+```
+
+- **设置padding:**  只给父元素设置padding值，对应的宽和高减去相应值
+
+
+```html
+<style>
+    .f {
+      width: 650px;
+      height: 400px;
+      background: yellow;
+
+      /*
+      如何保持盒子整体大小不变，那么增加padding时，width,height对应减小
+      */
+      padding-left: 150px;
+      padding-top: 100px;
+    }
+
+    .s {
+      width: 500px;
+      height: 300px;
+      background: blue;
+    }
+ </style>
+```
+
+- 设置transform:translate(-50%,-50%)(移动)
+
+
+```html
+<style>
+  .f {
+  width: 800px;
+  height: 500px;
+  background: lightblue;
+  margin-top: 50px;
+  /*父元素设置相对定位,口号*/
+  position: relative;
+}
+
+.f > .s {
+  width: 600px;
+  height: 400px;
+  background: pink;
+  position: absolute;
+  /*这里的 50% 是相对于 设置过定位的最近的祖先元素 的50%*/
+  top: 50%;
+  left: 50%;
+ 
+  /*
+  margin-left: -100px;
+  margin-top: -50px;
+  */
+  /*transform可以直接使用百分比进行设置*/
+   /*这里的 -50% 是相对于 自身 的50% */
+  transform: translate(-50%,-50%);
+}
+</style>
+```
+
 - 4------------------------------------------
 
 
