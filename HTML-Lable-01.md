@@ -1,4 +1,4 @@
-## HTML结构/基础标签/列表
+## HTML结构/基础标签/列表/meta标签的作用
 
 [TOC]
 
@@ -40,25 +40,25 @@
 
 ### 2.安装HTML开发工具
 
-－	安装atoma编辑器：
+- 安装atoma编辑器：
 
 ```
 $ sudo apt-get install atom -y
 ```
 
-－	安装chrome浏览器：官网下载软件包[chrome](https://www.google.cn/chrome/browser/desktop/index.html)	
+- 安装chrome浏览器：官网下载软件包[chrome](https://www.google.cn/chrome/browser/desktop/index.html)	
 
 ```
 $ sudo dpkg -i google-chrome-stable_current_amd64.deb
 ```
 
-－	安装gimp图形处理工具：
+- 安装gimp图形处理工具：
 
 ```
 $ sudo apt-get install gimp -y
 ```
 
-－	安装shutter截图工具：
+- 安装shutter截图工具：
 
 ```
 $ sudo apt-get install shutter -y
@@ -68,11 +68,11 @@ $ sudo apt-get install shutter -y
 
 #### 浏览器
 
-－	浏览器是指可以显示网页服务器或者文件系统的HTML文件（标准通用标记语言的一个应用）内容，并让用户与这些文件交互的一种软件。国内网民计算机上常见的网页浏览器有，QQ浏览器、Internet　Explorer、Firefox、Safari，Opera、Google Chrome、百度浏览器、搜狗浏览器、猎豹浏览器、360浏览器、UC浏览器、傲游浏览器、世界之窗浏览器等，浏览器是最经常使用到的客户端程序。
+- 浏览器是指可以显示网页服务器或者文件系统的HTML文件（标准通用标记语言的一个应用）内容，并让用户与这些文件交互的一种软件。国内网民计算机上常见的网页浏览器有，QQ浏览器、Internet　Explorer、Firefox、Safari，Opera、Google Chrome、百度浏览器、搜狗浏览器、猎豹浏览器、360浏览器、UC浏览器、傲游浏览器、世界之窗浏览器等，浏览器是最经常使用到的客户端程序。
 
 #### 服务器
 
-－	服务器，也称伺服器，是提供计算服务的设备。由于服务器需要响应服务请求，并进行处理，因此一般来说服务器应具备承担服务并且保障服务的能力。服务器的构成包括处理器、硬盘、内存、系统总线等，和通用的计算机架构类似，但是由于需要提供高可靠的服务，因此在处理能力、稳定性、可靠性、安全性、可扩展性、可管理性等方面要求较高。在网络环境下，根据服务器提供的服务类型不同，分为文件服务器，数据库服务器，应用程序服务器，WEB服务器等
+- 服务器，也称伺服器，是提供计算服务的设备。由于服务器需要响应服务请求，并进行处理，因此一般来说服务器应具备承担服务并且保障服务的能力。服务器的构成包括处理器、硬盘、内存、系统总线等，和通用的计算机架构类似，但是由于需要提供高可靠的服务，因此在处理能力、稳定性、可靠性、安全性、可扩展性、可管理性等方面要求较高。在网络环境下，根据服务器提供的服务类型不同，分为文件服务器，数据库服务器，应用程序服务器，WEB服务器等
 
 ![](https://nts.newbieol.com/static/k111/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/class-002/image/server1.jpg)
 
@@ -84,20 +84,28 @@ $ sudo apt-get install shutter -y
 
 #### HTTP协议
 
-－	超文本传输协议（HTTP，HyperText Transfer Protocol)是互联网上应用最为广泛的一种网络协议。所有的WWW文件都必须遵守这个标准。设计HTTP最初的目的是为了提供一种发布和接收HTML页面的方法。
+- 超文本传输协议（HTTP，HyperText Transfer Protocol)是互联网上应用最为广泛的一种网络协议。所有的WWW文件都必须遵守这个标准。设计HTTP最初的目的是为了提供一种发布和接收HTML页面的方法。
+- HTTP是一个客户端和服务器端请求和应答的标准（TCP）。客户端是终端用户，服务器端是网站。通过使用Web浏览器、网络爬虫或者其它的工具，客户端发起一个到服务器上指定端口（默认端口为80）的HTTP请求。
+- 通过HTTP或者HTTPS协议请求的资源由统一资源标示符（Uniform Resource Identifiers）（或者，更准确一些，URLs）来标识。
+- HTTP协议包括，头部，主体，状态码。
 
-－	HTTP是一个客户端和服务器端请求和应答的标准（TCP）。客户端是终端用户，服务器端是网站。通过使用Web浏览器、网络爬虫或者其它的工具，客户端发起一个到服务器上指定端口（默认端口为80）的HTTP请求。
+#### 常见状态码
 
-－	通过HTTP或者HTTPS协议请求的资源由统一资源标示符（Uniform Resource Identifiers）（或者，更准确一些，URLs）来标识。
+- 1xx:信息
+- 2xx:成功
+- 3xx:重定向
+- 4xx:客户端错误
+- 5xx:服务器错误
 
 #### HTML
 
-－	超文本标记语言，标准通用标记语言下的一个应用。“超文本”就是指页面内可以包含图片、链接，甚至音乐、程序等非文字元素。主要用于
-描述文档的内容，无法描述文档的样式(类似txt文本和word)。
+- 超文本标记语言，标准通用标记语言下的一个应用。“超文本”就是指页面内可以包含图片、链接，甚至音乐、程序等非文字元素。主要用于
+- 描述文档的内容，无法描述文档的样式(类似txt文本和word)。
 
 #### 后缀名
 
-－	HTML是一个网页文件的拓展名，和txt、jpg、mp3一样，是一个文件格式。.html文件就是网页文件。后缀名与文件之间是没有直接的关系。
+- HTML是一个网页文件的拓展名，和txt、jpg、mp3一样，是一个文件格式。.html文件就是网页文件。后缀名与文件之间是没有直接的关系。
+
 
 - 后缀名仅仅决定了文件的打开方式
 - 真正决定文本类型的是文件的内容
@@ -301,13 +309,263 @@ head部分:`/* 我是注释 */`
 
 ## 补充内容
 
-### 当你在浏览器地址栏输入一个URL后回车，将会发生的事情？
+### 1.当你在浏览器地址栏输入一个URL后回车，将会发生的事情？
 
 * 进行DNS解析，得到IP
 * 三次握手，建立TCP连接
 * 发送http请求（可能是一堆请求）
 * 服务器响应（根据客户端的缓存情况，返回内容）
 * 浏览器接收响应，根据接收内容进行渲染，显示
+
+
+### 2.meta标签
+
+### 1).name属性
+
+- name属性主要用于描述网页，与之对应的属性值为content，content中的内容主要是便于搜索引擎机器人查找信息和分类信息用的。
+
+#### 页面关键词
+
+- keywords用来告诉搜索引擎你网页的关键字是什么。 
+
+```html
+<meta name="Keywords" content="网上购物,网上商城,手机,笔记本,电脑,MP3,CD,VCD,DV,相机,数码,配件,手表,存储卡,京东" />
+```
+
+#### 页面描述
+
+- description用来告诉搜索引擎你的网站主要内容
+
+```html
+<meta name="description" content="京东JD.COM-专业的综合网上购物商城,销售家电、数码通讯、电脑、家居百货、服装服饰、母婴、图书、食品等数万个品牌优质商品.便捷、诚信的服务，为您提供愉悦的网上购物体验!" />
+```
+
+#### 移动设备
+
+```html
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,mininum-scale=1,user-scalable=no" />
+```
+
+#### 定义网页作者
+
+- 标注网页的作者
+
+```html
+ <meta name="author" content="author name" /> 
+```
+
+#### generator
+
+- generator的信息参数，代表说明网站的采用的什么软件制作。 
+
+```html
+<meta name="generator"content="信息参数"/> 
+```
+
+#### COPYRIGHT(网站版权信息)
+
+- COPYRIGHT的信息参数，代表说明网站版权信息
+
+```html
+<META NAME="COPYRIGHT"CONTENT="信息参数"> 
+```
+
+#### revisit-after
+
+- revisit-after代表网站重访,7days代表7天，依此类推。
+
+```html
+<META name="revisit-after"CONTENT="7days"> 
+```
+
+#### 申明编码　　
+
+```html
+<meta charset='utf-8' />
+```
+
+#### 搜索引擎索引方式
+
+- robots用来告诉搜索机器人哪些页面需要索引，哪些页面不需要索引
+
+```html
+<meta name="robots" content="index,follow" />
+　　<!--
+　　all：文件将被检索，且页面上的链接可以被查询；
+　　none：文件将不被检索，且页面上的链接不可以被查询；
+　　index：文件将被检索；
+　　follow：页面上的链接可以被查询；
+　　noindex：文件将不被检索；
+　　nofollow：页面上的链接不可以被查询。
+　　-->
+```
+
+#### 浏览器不会自动调整文件的大小,也就是说是固定大小,不会随着浏览器拉伸缩放。
+
+```html
+<meta name="MobileOptimized" content="240"/> 
+```
+
+#### 隐藏状态栏/设置状态栏颜色
+
+```html
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+```
+
+#### 添加到主屏后的标题
+
+```html
+<meta name="apple-mobile-web-app-title" content="标题">
+```
+
+#### 忽略数字自动识别为电话号码
+
+```html
+<meta name="format-detection" content="telephone=no"  />
+```
+
+#### 忽略识别邮箱
+
+```html
+<meta  name="format-detection" content="email=no" />
+```
+
+#### 
+
+### 2).http-equiv属性
+
+- http-equiv顾名思义，相当于http的文件头作用，它可以向浏览器传回一些有用的信息，以帮助正确和精确地显示网页内容
+
+#### Refresh(刷新)
+
+- 自动刷新并指向新页面。
+
+```html
+<meta http-equiv="Refresh"content="2;URL=http://www.haorooms.com"> //(注意后面的引号，分别在秒数的前面和网址的后面) 
+<!--其中的2是指停留2秒钟后自动刷新到URL网址。-->
+```
+
+#### Expires(期限)
+
+- 可以用于设定网页的到期时间。一旦网页过期，必须到服务器上重新传输。 
+
+```html
+<meta http-equiv="expires"content="Fri,12Jan200118:18:18GMT"> 
+```
+
+#### Pragma(cache模式)
+
+- 禁止浏览器从本地计算机的缓存中访问页面内容。 
+
+```html
+<meta http-equiv="Pragma"content="no-cache">
+```
+
+#### Set-Cookie(cookie设定)
+
+- 如果网页过期，那么存盘的cookie将被删除。 
+
+```html
+<meta http-equiv="Set-Cookie"content="cookie value=xxx;expires=Friday,12-Jan-200118:18:18GMT；path=/"> 
+<!--必须使用GMT的时间格式。 -->
+```
+
+#### Window-target(显示窗口的设定)
+
+- 强制页面在当前窗口以独立页面显示。 
+
+```html
+<meta http-equiv="Window-target"content="_top"> 
+<!--用来防止别人在框架里调用自己的页面。-->
+```
+
+#### content-Type(显示字符集的设定)
+
+- 设定页面使用的字符集。
+
+```html
+<meta http-equiv="content-Type"content="text/html;charset=gb2312"> 
+```
+
+- GB2312时，简体中文； 
+- BIG5时，繁体中文； 
+- iso-2022-jp时，日文； 
+- ks_c_5601时，韩文； 
+- ISO-8859-1时，英文； 
+- UTF-8时，代表世界通用的语言编码； 
+
+#### content-Language（显示语言的设定）
+
+```html
+<meta http-equiv="Content-Language"content="zh-cn"/> 
+```
+
+#### http-equiv="imagetoolbar"
+
+- 指定是否显示图片工具栏，当为false代表不显示，当为true代表显示。
+
+```html
+<meta http-equiv="imagetoolbar"content="false"/> 
+```
+
+#### Content-Script-Type
+
+- W3C网页规范，指明页面中脚本的类型。
+
+```html
+<Meta http-equiv="Content-Script-Type"Content="text/javascript"> 
+```
+
+#### 优先使用 IE 最新版本和 Chrome
+
+```html
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+　　<!-- 关于X-UA-Compatible -->
+　　<meta http-equiv="X-UA-Compatible" content="IE=6" ><!-- 使用IE6 -->
+　　<meta http-equiv="X-UA-Compatible" content="IE=7" ><!-- 使用IE7 -->
+　　<meta http-equiv="X-UA-Compatible" content="IE=8" ><!-- 使用IE8 -->
+```
+
+#### 禁止浏览器从本地计算机的缓存中访问页面内容
+
+```html
+<meta http-equiv="Pragma" content="no-cache">
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
