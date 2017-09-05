@@ -363,3 +363,51 @@ $("[name|=on]").css("font-size", "50px");
     </script>
 ```
 
+## 补充内容
+
+### 1.jQuery库中的$()是什么？
+
+- 答：jQuery等价于$符号，\$()可以创建一个元素，并追加到相应的元素中去，还可以利用选择器选择DOM元素。
+
+### 2.$(function(){})的作用是什么？
+
+- 它是$(document).ready(function(){})的简写形式，是用来在DOM加载完成之后执行的一系列预先定义好的函数。
+- 脚本文件尽量放到body的最后执行！！
+- DOM节点加载完毕指的的是页面上所有的标签都已经加载就绪(但不是所有的资源，比如图片，音频，视频等等)
+
+```html
+  <h1>$(function(){})</h1>
+  <img src="./images/zhaosi.jpg" alt="">
+
+  <!--
+  脚本文件尽量放到body的最后执行！！
+  -->
+  <script src="./jquery.min.js" charset="utf-8"></script>
+  <script type="text/javascript">
+    /*
+    DOM节点加载完毕指的的是页面上所有的标签都已经加载就绪(但不是所有的资源，比如图片，音频，视频等等)
+    */
+    //语句１
+    $(function() {
+      console.log("所有的DOM节点加载完毕之后再执行！！！！");
+    });
+	//语句２
+    console.log("script .....");
+  </script>
+
+<!--
+	 先执行语句２，再执行语句１
+-->
+```
+
+
+
+#### 1.HTML页面的加载过程
+
+![](./HTTP-load.jpg)
+
+
+
+#### 2.浏览器的加载与渲染过程
+
+[原文链接](./onload.md)
