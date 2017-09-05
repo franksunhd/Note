@@ -288,7 +288,7 @@ function test(){
 > - 如果在任何函数之外声明了一个变量,则该变量为**全局变量**,且该变量的值在整个持续范围内都可以访问和修改.
 > - 如果在函数定义内部声明了一个变量,则该变量为**局部变量**,且每次执行该程序时都会创建和破坏该变量,且不能被函数外部的任何事物所访问.
 > - 局部变量一定要以var声明,否则是全局变量.
-> - **局部变量只能在指定的作用内访问**	**全局变量在任意位置都可以访问**
+>   - **局部变量只能在指定的作用内访问****全局变量在任意位置都可以访问**
 > - 局部函数，默认只在能当前作用域内调用
 
 ```javascript
@@ -458,6 +458,24 @@ var b = false;
 console.log(b.toString());
 ```
 
+> parseInt()方法:可解析一个字符串，并返回一个整数
+
+```javascript
+var a = '10abc';
+//parseInt()
+alert(parseInt(a));
+//打印的结果是：10
+```
+
+> parseFloat()方法:可解析一个字符串，并返回一个浮点数
+
+```javascript
+var a = "10.23abc34";
+//parseFloat()
+alert(parseFloat(a));
+//打印的结果是：10.23
+```
+
 > 在不知道要转换的值是不是 null 或 undefined 的情况下,还可以使用转型函数 String() ,这个函数能够将**任何类型**的值转换为字符串。 
 
 ```javascript
@@ -603,13 +621,52 @@ if (value) {
 }
 ```
 
-### 11、关键字
+### 11.关键字
 
 ![](https://nts.newbieol.com/static/k111/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/class-005/image/keywords.png)
 
 > **注意**：定义标识符时不要使用关键字和保留字。
 
+### 12.字符串操作
 
+```javascript
+<script type="text/javascript">
+// onload 页面加载完毕之后
+onload = function(){
+
+//HTML DOM document对象
+//getElementById 返回对拥有指定 id 的第一个对象的引用。
+document.getElementById("btn").onclick = function(){
+//声明字符串并初始化
+var sString = "hello world";
+
+// length是输出字符串的长度
+console.log("sString.length : " + sString.length);
+  
+// charAt(x)是输出 下标为x的字符
+console.log("sString.charAt(2) : " + sString.charAt(2));
+  
+// substring(x,y) 是输出下标为 x~y的字符
+console.log("sString.substring(1,8) : " + sString.substring(1,8));
+  
+// substr(x,y) 是输出下标从x开始的连续的y个字符
+console.log("sString.substr(1,4) : " + sString.substr(1,4));
+  
+// indexof("x") 是输出字符串中从左到右第1个字符开始的x字符第一次出现的位置的数组下标
+console.log("sString.indexOf('l'):" + sString.indexOf("l"));
+  
+// indexof("x",y)是输出字符串中从左到右第y个字符开始的x字符第一次出现的位置的数组下标
+console.log("sString.indexOf('l',4) : " + sString.indexOf("l",4));
+  
+// indexof("x")是输出字符串中从右到左第 1个字符开始的x字符第一次出现的位置的数组下标
+console.log("sString.lastIndexOf('l') : " + sString.lastIndexOf("l"));
+  
+// indexof("x",y)是输出字符串中从右到左第y个字符开始的x字符第一次出现的位置的数组下标
+console.log("sString.lastIndexOf('l',4):" + sString.lastIndexOf("l",4));
+      }
+}
+</script>
+```
 
 
 
