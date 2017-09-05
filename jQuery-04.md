@@ -236,6 +236,9 @@ function handlerClick(){
 
 #### on()方法
 
+- **在选定的元素上绑定一个或多个事件处理函数。**
+
+
 - 使用on方法进行事件绑定,通用的事件绑定方法
 - on方法可以自定义事件
 - on方法也可以绑定多个事件处理函数
@@ -243,7 +246,7 @@ function handlerClick(){
 #### trigger()方法～触发自定义的事件
 
 - trigger触发自定义的事件
-- 根据绑定到匹配元素的给定的事件类型执行所有的处理程序和行为。
+- **根据绑定到匹配元素的给定的事件类型执行所有的处理程序和行为。**
 
 ```html
 <!DOCTYPE html>
@@ -362,6 +365,25 @@ $(".message input").focus(function(){
    });
 ```
 
+#### .blur() 失去焦点
+
+```javascript
+$(".message input").ｂｌｕｒ(function(){
+     $(".message p").css("visibility", "visible");
+   });
+```
+
+#### .change()
+
+```html
+<input type="text" value="change" onchange="alert('我被改变了');">
+<select name="address" onchange="alert('城市变为了 '+ value);">
+    <option value="北京">北京</option>
+    <option value="上海">上海</option>
+    <option value="广州">广州</option>
+</select>
+```
+
 ### 事件对象
 
 #### e.pageX
@@ -410,5 +432,47 @@ $(document).contextmenu(function(e){
 $(document).keyup(function(e){
       console.log("弹起了："  + e.which);
     });
+```
+
+### value 和placeholder的区别
+
+```html
+<!--
+      value  和　placeholder 的区别
+      1.placeholder是一个占位符，value为空的时候才会显示出来，但是他本身并不是value，也不会被表单提交
+      2.一般不会把两者替换使用，placeholder使用时可以不清除，相当于文本框的文本背景，不设置清空不会清空
+        缺点：当清除之后需要还原的时候就需要　独立添加
+      3.颜色样式，value的颜色为黑色(默认)，placeholder的为浅灰色(默认)
+      4.判断的时候value直接和默认值this.defaultValue比较，而placeholder是直接置为空("")
+-->
+     <h2>placeholder和value的区别</h2>
+
+      <input type="text" name="" placeholder="placeholder">
+      <input type="text" name="" value="value">
+
+<script type="text/javascript">
+    var oldValue;
+    var newValue;
+	//获取光标
+    $("input:text").focus(function(){
+      //placeholder表示
+      $(this).attr("placeholder","");
+      // value表示
+      oldValue = $(this).val();
+      if(oldValue == this.defaultValue){
+        $(this).val("");
+        }
+    });
+	//失去光标
+    $("input:text").blur(function(){
+      // placeholder表示，需独立添加，不能赋值
+      $(this).attr("placeholder","placeholder");
+      // value表示不需要独立添加，直接赋值给变量
+      oldValue = $(this).val();
+      if(!oldValue){
+        $(this).val(this.defaultValue);
+      }
+    });
+  </script>
 ```
 
