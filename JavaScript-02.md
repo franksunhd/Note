@@ -1,8 +1,10 @@
-## JavaScript的运算符
+## JavaScript的运算符/循环分支控制语句/函数声明/数组
 
 [TOC]
 
-### 1.基本运算符(+ - * /  %)
+### 1.运算符
+
+#### 1.1 基本运算符(+ - * /  %)
 
 ```javascript
 //算数运算符
@@ -18,7 +20,7 @@
     console.log("c = a+b = ",c);
 ```
 
-### 2.自增自减运算符
+#### 1.2 自增自减运算符
 
 ```javascript
 //自增自减运算符
@@ -28,7 +30,7 @@
     console.log("a = ",a);		// a=1
 ```
 
-### 3.关系运算符
+#### 1.3 关系运算符
 
 - 非等值关系运算符	和	等值关系运算符
 - ==      (等值符,先转换为相同类型再进行比较大小) 
@@ -71,7 +73,7 @@
     }
 ```
 
-### 4.逻辑运算符
+#### 1.4 逻辑运算符
 
 ```javascript
 // 逻辑运算符  && || !
@@ -93,19 +95,19 @@
     //或运算  包括 短裤或(||) 和 逻辑或(|)
 ```
 
-### 5.对象运算符
+#### 1.5 对象运算符
 
 
 
-### 6.位运算符
+#### 1.6 位运算符
 
 
 
-### 7.其他运算符
+#### 1.7 其他运算符
 
 
 
-### 8.逻辑判断语句
+### 2.逻辑判断语句
 
 #### if...else...条件语句
 
@@ -119,6 +121,59 @@ if(){
 else{
     ...
 }
+```
+
+```html
+<script type="text/javascript">
+     var a = 10;
+     //判断，真或者假？？？？
+     if (a < 0){
+       console.log("a < 0");
+     } else {
+       var b = 20;//全局变量
+       console.log("a >= 0");
+     }
+     console.log(b);
+
+     var c = 30;
+     if (c > 30){
+       console.log("c > 30");
+     } else if (c == 30){
+       console.log("c  == 30");
+     } else {
+       console.log("c  < 30");
+     }    
+    </script>
+```
+
+- 注意:     !   !   !   !
+
+```html
+var a = 40;
+if (a > 30) {
+      console.log("a > 30");
+    } else if (a > 35) {
+      console.log("a > 35");
+    } else  if (a == 30) {
+      console.log("a == 30");
+    } else if (a < 30) {
+      console.log("a < 30");
+    }
+<!--只打印 ａ > 30 不打印　a > 35 -->
+```
+
+```javascript
+var a;
+var a = "";		
+var a = 0;
+var a = NaN;
+    // 隐式转换
+    if (a){
+      console.log("xxxx");
+    } else {
+      console.log("yyyy");
+    }
+<!--以上四种清空都打印　ｙｙｙｙ-->
 ```
 
 #### switch...case...条件语句
@@ -157,19 +212,36 @@ switch(week){
 }
 ```
 
-### 9.循环语句
+### 3.循环语句
 
 #### for循环
 
-```javascript
+```html
 for(init; condition; increment){
     statement(s);
 }
+
+<!--条件可以省略，但是“;”不能省略-->
 ```
+
+```javascript
+for (;;){
+  //死循环
+  console.log("xxx");
+  }
+
+//a仍然属于全局变量
+for (var a = 10; a > 0; a--){
+   console.log(a);
+  }
+```
+
+
 
 - Homework:分别使用for循环和while循环打印九九乘法表
 
-```javascript
+```html
+<!--for循环 第一种方法-->
 <!DOCTYPE html>
 <html>
   <head>
@@ -204,6 +276,58 @@ for(init; condition; increment){
 </html>
 ```
 
+```html
+<!--for 循环第二种方法-->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>循环分支</title>
+  </head>
+  <body>
+    <input id="btn" type="button" name="btn" value="测试事件">
+    <script type="text/javascript">
+    // onload 页面加载完毕之后
+      onload = function(){
+        //HTML DOM document对象
+        //getElementById 返回对拥有指定 id 的第一个对象的引用。
+        document.getElementById("btn").onclick = function(){
+          // 九九乘法表
+          var sHTML = "";
+          sHTML = "<table>";
+          for(var i = 1; i <= 9 ; i++){
+            sHTML+="<tr>";
+            for(var j=1 ; j<=i;j++){
+              sHTML+="<td>" + i + " * " + j + " = " + i*j +"</td>";
+            }
+            sHTML+="</tr>";
+          }
+          sHTML+="</table>";
+
+          document.write(sHTML);
+        }
+      }
+    </script>
+  </body>
+</html>
+```
+
+```javascript
+<!--冒泡排序法-->
+var aNumber = [10,2,34,4,56,12,45,44,6,12,23,55];
+var item=0;
+for(var m = 0;m <= aNumber.length-2; m++){
+   for(var n = m+1; n <= aNumber.length-1;n++){
+       if(aNumber[m]>aNumber[n]){
+          item=aNumber[m];
+          aNumber[m]=aNumber[n];
+          aNumber[n]=item;
+       }
+   
+}
+alert(aNumber);
+```
+
 #### while循环
 
 ```javascript
@@ -213,7 +337,7 @@ while (condition)
 }
 ```
 
-### 10.JavaScript函数声明
+### 4.JavaScript函数声明
 
 > ​	函数对任何语言来说都是一个核心的概念。**通过函数可以封装任意多条语句**,而且可以在任何地方、任何时候调用执行。
 >
@@ -350,7 +474,7 @@ fun1();				//函数表达式的调用必须在定义之后
     console.log(result);
 ```
 
-### 11.数组
+### 5.数组
 
 #### 数组的声明和长度
 
@@ -367,11 +491,13 @@ fun1();				//函数表达式的调用必须在定义之后
       var a3 = new Array("shangsan","lisi","wangwu");
       //打印数组信息
       console.log(a1 + "|" + a2 + "|" + a3);
+	  //结果为:|,|shangsan,lisi,wangwu
 
       //简介的创建
       var aa1 = [];
       var aa2 = ["张珊","李四","王五"];
       console.log(aa1 + "||" + aa2);
+	  //结果为:||张珊,李四,王五
 ```
 
 ```javascript
@@ -396,6 +522,48 @@ fun1();				//函数表达式的调用必须在定义之后
 //数组初始化可以同时有多种类型,number,string,date
 var b = [1,"shangsan",new Date(),[1,2,3,4,5]];
 alert(b);
+```
+
+#### 数组的操作
+
+```javascript
+//新建一个数组并初始化
+var aArray = new Array();
+var aArray1 = new Array(4);
+var aTeam = ["aaa","bbb","ccc","ddd"];
+//下标为0 的位置存入 数值1
+aArray[0] = "aaa";
+aArray[1] = "bbb";
+aArray[2] = "ccc";
+aArray[3] = "ddd";
+// 输出aArray数组的长度
+console.log("aArray.length : " + aArray.length);
+// 输出下标为2的内容
+console.log("aTeam[2] : " + aTeam[2]);
+
+// 将数组转换为字符串
+console.log("aTeam.toString() : " + aTeam.toString());
+
+// 将字符串按照指定的间隔格式输出 join()
+console.log("aTeam.join('-').toString():"+ aTeam.join("-").toString());
+
+// 将数组中的内容逆序输出
+console.log("aTeam.reverse().join('-').toString():"+ aTeam.reverse().join('-').toString());
+
+// 将字符串转换为数组
+var sString = "aaa-bbb-ccc";  //object类型
+
+// 使用split()方法 将字符串中指定间隔的内容分离开
+var aTeam1 = sString.split("-");
+
+// 输出分离后的内容
+console.log("sString.split('-') :" + aTeam1);
+
+// 输出下标为1 的内容
+console.log("aTeam1[1] :" + aTeam1[1]);
+
+// 输出aTeam1的类型
+console.log("typeof aTeam1 :" + typeof aTeam1);
 ```
 
 #### 数组的常见方法
@@ -454,7 +622,7 @@ alert(aa);
 
 ##### 取出指定索引的字串~slice
 
-- slice() 方法返回一个从开始到结束（**\*不包括结束***）选择的数组的一部分**浅拷贝**到一个新数组对象。
+- slice() 方法返回一个从开始到结束（**\*不包括结束***）选择的数组的一部分**浅拷贝**到一个新数组对象。例如:[2,8)从2到8,包括 2 不包括 8 .
 
 ##### 拼接数组~concat
 
@@ -496,3 +664,33 @@ alert(aa);
   </body>
 </html>
 ```
+
+### 6.break-continue-return的用法
+
+```javascript
+onload = function(){
+   document.getElementById("btn").onclick = function(){
+     var iSum = 0;
+     for(var i = 1; i < 101; i++)
+     {
+        if(i==5){
+          // break;结束最近的循环
+          // break;
+          // continue是结束符合条件的本次循环
+          // continue;
+          // return 第一种用法 是跳出整个方法体
+          // return;
+          // return 第二种用法 是返回一个值
+          i = A(i);
+       }
+       iSum+=i;
+      }
+      alert(iSum);
+      function A(i){
+          i+=5;
+          return i;
+       }
+     }
+}
+```
+
