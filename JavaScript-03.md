@@ -1,4 +1,4 @@
-## JavaScript的函数重载
+## JavaScript的函数重载/事件机制
 
 [TOC]
 
@@ -79,3 +79,49 @@
 </html>
 ```
 
+### 2.事件机制
+
+#### 事件的引入方式
+
+##### 第一种:直接给标签加事件
+
+```html
+<input type="button" value="测试第一个按钮" onclick="test();">
+  
+<script type="text/javascript">
+function test() {
+  alert("我是一个按钮");
+};
+</script>
+```
+
+##### 第二种:标签设置Id,在js代码中找到id加载事件
+
+```html
+<input type="button" value="测试外部事件" id="btn">
+<script type="text/javascript">
+
+onload = function() {
+  document.getElementById('btn').onclick = function() {
+    alert('我是外部按钮');
+  }
+}
+</script>
+```
+
+#### javaScript的事件驱动
+
+- 在浏览器中，事件作为一个极为重要的机制，给予JavaScript响应用户的操作和DOM变化的能力。
+
+#### 事件的触发
+
+- 用户的互动操作(单击,双击,拖动)
+- 业务逻辑触发(Ajax的 readyState 的值从0~4的改变)
+
+#### 常见的事件操作
+
+- 单击　双击
+- 鼠标移动
+- 键盘按下
+- 表单
+- 页面事件
