@@ -409,7 +409,7 @@ head部分:`/* 我是注释 */`
 #### 隐藏状态栏/设置状态栏颜色
 
 ```html
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
 ```
 
 #### 添加到主屏后的标题
@@ -421,13 +421,13 @@ head部分:`/* 我是注释 */`
 #### 忽略数字自动识别为电话号码
 
 ```html
-<meta name="format-detection" content="telephone=no"  />
+<meta name="format-detection" content="telephone=no" />
 ```
 
 #### 忽略识别邮箱
 
 ```html
-<meta  name="format-detection" content="email=no" />
+<meta name="format-detection" content="email=no" />
 ```
 
 #### 
