@@ -12,7 +12,7 @@
 
 ### 1.Table标签
 
-![](https://nts.newbieol.com/static/k111/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/class-002/image/table.jpg)
+![](./images/table.jpg)
 #### caption标签
 －　caption 标签必须紧随 table 标签之后。您只能对每个表格定义一个标题。通常这个标题会被居中于表格之上。
 
@@ -20,7 +20,7 @@
 
 － 	表头一般位于表格的第一行或第一列，其文本加粗居中，如下图所示，即为设置了表头的表格。设置表头非常简单，只需用表头标记`<th></th>`替代相应的单元格标记`<td></td>`即可。
 
-![](https://nts.newbieol.com/static/k111/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/class-002/image/th.png)
+![](./images/th.png)
 
 代码如下：
 
