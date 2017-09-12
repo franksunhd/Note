@@ -93,13 +93,13 @@ A 透明度: 取值范围0~1
 比如：
 `text-shadow: -5px -5px 2px red, 10px 10px 2px green;`
 
-![](https://nts.newbieol.com/static/k111/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/class-011/image/text.png)
+![](./images/text.png)
 
 ```html
 text-shadow: -1px -1px 1px #000, 1px 1px 1px #FFF;
 ```
 
-![](https://nts.newbieol.com/static/k111/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/class-011/image/text1.png)
+![](./images/text1.png)
 
 #### CSS 3边框圆角化(border-radius)
 
@@ -130,13 +130,13 @@ text-shadow: -1px -1px 1px #000, 1px 1px 1px #FFF;
 
 - 设置的图片将会被“切割”成九宫格形式，然后进行设置,如下图:
 
-![](https://nts.newbieol.com/static/k111/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/class-011/image/border-image.png)
+![](./images/border-image.png)
 
 - 其中四个角位置、形状保持不变，中心位置水平垂直两个方向平铺,形成如下效果：
 
-![](https://nts.newbieol.com/static/k111/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/class-011/image/border-image1.png)
+![](./images/border-image1.png)
 
-![](https://nts.newbieol.com/static/k111/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/class-011/image/border-image2.png)
+![](./images/border-image2.png)
 
 ### 7.CSS 3盒子
 
@@ -191,11 +191,11 @@ background-size: 100% 100%;
 
 #### 多背景设置  url引入背景图片,使用","隔开
 
-![](https://nts.newbieol.com/static/k111/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/class-011/image/background.png)
+![](./images/background.png)
 
 效果如下：看似完整的一张图片，其实事由四部分背景图片拼凑而成。
 
-![](https://nts.newbieol.com/static/k111/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/class-011/image/background1.png)
+![](./images/background1.png)
 
 ### 9.CSS 3渐变
 
@@ -211,9 +211,9 @@ background-size: 100% 100%;
 - `background: linear-gradient(to right, red 50%, yellow 70%, pink,green,blue);`
 - 渐变的方向如下图：
 
-![](https://nts.newbieol.com/static/k111/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/class-011/image/linear-gradient.png)
+![](./images/linear-gradient.png)
 
-![](https://nts.newbieol.com/static/k111/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/class-011/image/linear-gradient1.png)
+![](./images/linear-gradient1.png)
 
 #### 径向渐变(radial-gradient)
 
@@ -225,16 +225,16 @@ background-size: 100% 100%;
 - **椭圆的径向渐变**
 - `background-image: radial-gradient(ellipse at center, yellow, red, blue, pink,orange);`
 
-![](https://nts.newbieol.com/static/k111/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/class-011/image/radial-gradient.png)
+![](./images/radial-gradient.png)
 
 ### 10.CSS 3过渡
 
 - **过渡** 是CSS 3中具有颠覆性的特征之一，可以实现元素**不同状态间**的平滑过渡，经常用来制作动画效果。
   帧动画：通过一帧一帧的画面按照固定顺序和速度播放。
 
-![](https://nts.newbieol.com/static/k111/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/class-011/image/transition1.jpg)
+![](./images/transition1.gif)
 
-![](https://nts.newbieol.com/static/k111/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/class-011/image/transition2.jpg)
+![](./images/transition2.gif)
 
 - 特点：当前元素只要有“属性”发生变化时，可以平滑的进行过渡。
 - transition-property 设置过渡属性
@@ -398,7 +398,7 @@ transform-origin:50% 50%;(默认50% 50%)
 - **动画** 是同样是CSS3中具有颠覆性的特征之一，可通过设置**多个节点**来精确控制**一个或一组**动画，常用来实现复杂的动画效果。
 - animotion是属于**标准流** 。
 
-![](https://nts.newbieol.com/static/k111/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/class-012/image/animation.jpg)
+![](./images/animation.gif)
 
 #### 创建动画的步骤
 
@@ -499,7 +499,7 @@ transform-origin:50% 50%;(默认50% 50%)
 - 弹性布局的主要思想是让容器有能力来改变项目的宽度和高度，以填满可用空间（主要是为了容纳所有类型的显示设备和屏幕尺寸）的能力。 
 - 最重要的是弹性盒子布局与方向无关，相对于常规的布局（块是垂直和内联水平为基础），很显然，这些工作以及网页设计缺乏灵活性，无法支持大型和复杂的应用程序（特别当它涉及到改变方向，缩放、拉伸和收缩等）。 
 
-![](https://nts.newbieol.com/static/k111/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/class-012/image/flex.jpg)
+![](./images/flex.png)
 
 #### flex(伸缩盒子)常用属性
 
@@ -710,7 +710,7 @@ transform-origin:50% 50%;(默认50% 50%)
 
 #### 常见媒体查询特性
 
-![](https://nts.newbieol.com/static/k111/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/class-012/image/media.jpg)
+![](./images/media.jpg)
 
 - 媒体查询的大部分媒体特性都接受min和max用于表达“大于或等于”和“小与或等于”。如：width会有min-width和max-width
 
