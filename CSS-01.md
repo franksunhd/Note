@@ -615,7 +615,7 @@ input[type="text"]:disabled {
 
 #### 三种样式类型对比
 
-![](https://nts.newbieol.com/static/k111/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/class-003/image/css.jpg)
+![](./images/css.jpg)
 
 
 
