@@ -40,7 +40,7 @@
 
 - 描述处理网页内容的方法和接口
 
-  ![](https://nts.newbieol.com/static/k111/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/class-005/image/js.jpg)
+  ![](./images/js.jpg)
 
 ### 3、JavaScript的用途(作用)
 
@@ -137,7 +137,7 @@
 
   > **注释的分类**(**不要和其他的注释混淆**)
   >
-  > html的注释<!-- -->
+  > html的注释		<!-- -->
   >
   > css的注释		//	/**/
   >
@@ -512,9 +512,9 @@ console.log(Boolean(0));				//false
 console.log(Boolean(undefined));		//false
 ```
 
-![](https://nts.newbieol.com/static/k111/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/class-005/image/bool1.png)
+![](./images/bool1.png)
 
-![](https://nts.newbieol.com/static/k111/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/class-005/image/bool2.png)
+![](./images/bool2.png)
 
 ```javascript
 var a = 10;
@@ -623,7 +623,7 @@ if (value) {
 
 ### 11.关键字
 
-![](https://nts.newbieol.com/static/k111/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/class-005/image/keywords.png)
+![](./images/keywords.png)
 
 > **注意**：定义标识符时不要使用关键字和保留字。
 
