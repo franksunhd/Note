@@ -8,7 +8,7 @@
 
 －	font-size属性用于设置**字号**，该属性的值可以使用相对长度单位，也可以使用绝对长度单位。其中，相对长度单位比较常用，推荐使用像素**单位px**，绝对长度单位使用较少。
 
-![](https://nts.newbieol.com/static/k111/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/class-003/image/font-size.jpg)
+![](./images/font-size.jpg)
 
 ```html
 <!--
@@ -37,7 +37,7 @@ p {
 - 尽量使用系统默认字体，保证在任何用户的浏览器中都能正确显示。
 - 使用unicode对中文字体进行编码。
 
-![](https://nts.newbieol.com/static/k111/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/class-003/image/unicode.jpg)
+![](./images/unicode.jpg)
 
 ###  3.font-weight属性（加粗）
 
@@ -99,7 +99,7 @@ font-style属性用于定义字体风格，如设置斜体、倾斜或正常字�
 
 －	line-height属性用于设置行间距，就是行与行之间的距离，即字符的垂直间距，一般称为行高。line-height常用的属性值单位有三种，分别为**像素px**，**相对值em**和**百分比%**，实际工作中使用最多的是像素px。
 
-![](https://nts.newbieol.com/static/k111/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/class-004/image/line-height.jpg)
+![](./images/line-height.jpg)
 
 **行高是指两条基线之间的距离**
 
