@@ -2,9 +2,9 @@
 
 [TOC]
 
-![](./jquery-01.png)
+![](./images/jquery-01.png)
 
-![](./jquery-02.png)
+![](./images/jquery-02.png)
 
 ### 1.什么是jQuery和CDN?
 
@@ -404,7 +404,7 @@ $("[name|=on]").css("font-size", "50px");
 
 #### 1.HTML页面的加载过程
 
-![](./HTTP-load.jpg)
+![](./images/HTTP-load.jpg)
 
 
 
