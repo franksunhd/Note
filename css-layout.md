@@ -111,10 +111,10 @@
 您可以狠狠地点击这里：[绝对定位法演示demo](http://www.zhangxinxu.com/study/200911/three-column-width-auto-1.html)
 
 css代码如下（为截图）：
-![绝对定位法下的css代码](http://image.zhangxinxu.com/image/blog/200911/2009-11-17_192909.png)
+![绝对定位法下的css代码](./images/margin-css.png)
 
 HTML代码为（图片）：
-![绝对定位法的HTML代码](http://image.zhangxinxu.com/image/blog/200911/2009-11-17_192929.png)
+![绝对定位法的HTML代码](./images/margin-box.png)
 
 这里的左中右三个div的顺序是可以任意调整的，这与剩下的方法就不一样了，需要注意一下。
 
@@ -126,10 +126,10 @@ HTML代码为（图片）：
 这种方法是在实际的网站中应用的最多的，我个人感觉多少有些跟风的嫌疑。此方法很难用一句话概括。首先，**中间的主体要使用双层标签**。外层div宽度100%显示，并且浮动（本例左浮动，下面所述依次为基础），内层div为真正的主体内容，含有左右210像素的margin值。左栏与右栏都是采用margin负值定位的，左栏左浮动，margin-left为-100%，由于前面的div宽度100%与浏览器，所以这里的-100%margin值正好使左栏div定位到了页面的左侧；右侧栏也是左浮动，其margin-left也是负值，大小为其本身的宽度即200像素。
 
 见下面的css代码：
-![margin负值定位方法的css代码图片版](http://image.zhangxinxu.com/image/blog/200911/2009-11-17_194544.png)
+![margin负值定位方法的css代码图片版](./images/margin-css-02.png)
 
 HTML代码：
-![margin负值法HTML代码部分](http://image.zhangxinxu.com/image/blog/200911/2009-11-17_194614.png)
+![margin负值法HTML代码部分](./images/margin-box-02.png)
 
 您可以狠狠地点击这里：[margin负值法演示demo](http://www.zhangxinxu.com/study/200911/three-column-width-auto-2.html)
 
@@ -145,10 +145,10 @@ HTML代码：
 您可以狠狠地点击这里：[自身浮动法演示demo](http://www.zhangxinxu.com/study/200911/three-column-width-auto-3.html)
 
 css代码如下：
-![自身浮动法css代码](http://image.zhangxinxu.com/image/blog/200911/2009-11-17_201133.png)
+![自身浮动法css代码](./images/float-css.png)
 
 HTML代码：
-![自身浮动法的HTML代码](http://image.zhangxinxu.com/image/blog/200911/2009-11-17_201152.png)
+![自身浮动法的HTML代码](./images/float-box.png)
 
 这里三个div标签的顺序的关键是要把主体div放在最后，左右两栏div顺序任意。
 
