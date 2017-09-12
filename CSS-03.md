@@ -6,14 +6,14 @@
 
 - 　所谓盒子模型就是把HTML页面中的元素看作是一个矩形的盒子，也就是一个盛装内容的容器。每个矩形都由元素的内容、内边距（padding）、边框（border）和外边距（margin）组成。
 
-![](https://nts.newbieol.com/static/k111/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/class-004/image/box.jpg)
+![](./images/box.jpg)
 
 
 
 - **如果把手机想象成HTML元素，那么手机盒子就是一个CSS盒子模型，其中手机为CSS盒子模型的内容，填充泡沫的厚度为CSS盒子模型的内边距，纸盒的厚度为CSS盒子模型的边框。 **
 - 多个手机放在一起时
 
-![](https://nts.newbieol.com/static/k111/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/class-004/image/box1.jpg)
+![](./images/box1.jpg)
 
 - 最终的网页就是有多个盒子组成。
 
@@ -256,7 +256,7 @@ margin: 150px auto;
 	属性值包括：left,right,none;
 ```
 
-![](https://nts.newbieol.com/static/k111/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/class-004/image/float.jpg)
+![](./images/float.jpg)
 
 ### 2.浮动的特点
 
