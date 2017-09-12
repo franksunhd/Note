@@ -188,13 +188,13 @@ recv from server:  {
  -->
 ```
 
-![](./onreadystatechange.png)
+![](./images/onreadystatechange.png)
 
-![](./readyState.png)
+![](./images/readyState.png)
 
-![](./response.png)
+![](./images/response.png)
 
-![](./status.png)
+![](./images/status.png)
 
 ### 6.jQuery中的Ajax的使用
 
