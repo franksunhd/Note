@@ -74,11 +74,11 @@ $ sudo apt-get install shutter -y
 
 - 服务器，也称伺服器，是提供计算服务的设备。由于服务器需要响应服务请求，并进行处理，因此一般来说服务器应具备承担服务并且保障服务的能力。服务器的构成包括处理器、硬盘、内存、系统总线等，和通用的计算机架构类似，但是由于需要提供高可靠的服务，因此在处理能力、稳定性、可靠性、安全性、可扩展性、可管理性等方面要求较高。在网络环境下，根据服务器提供的服务类型不同，分为文件服务器，数据库服务器，应用程序服务器，WEB服务器等
 
-![](https://nts.newbieol.com/static/k111/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/class-002/image/server1.jpg)
+![](./images/server1.jpg)
 
 #### 浏览器和服务器的关系
 
-![](https://nts.newbieol.com/static/k111/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/class-002/image/server2.jpg)
+![](./images/server2.jpg)
 
 ### 4.了解http协议
 
@@ -119,7 +119,7 @@ $ sudo apt-get install shutter -y
 - HTML 4.01（微小改进）——1999年12月24日，W3C推荐标准
 - HTML 5——2014年10月28日，W3C推荐标准 <https://www.w3.org>
 
-![](https://nts.newbieol.com/static/k111/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/class-002/image/html5.jpg)
+![](./images/html5.jpg)
 
 ### 5.HTML结构
 
@@ -149,7 +149,7 @@ $ sudo apt-get install shutter -y
 <body></body>      ---->页面的主体部分用于显示页面内容
 ```
 
-![](https://nts.newbieol.com/static/k111/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/class-002/image/html_struct1.png)
+![](./images/html_struct1.png)
 
 ### 6.HTML基础标签
 
