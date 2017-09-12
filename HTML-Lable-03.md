@@ -6,7 +6,7 @@
 
 - 表单在网页中主要负责数据采集功能。
 
-![](https://nts.newbieol.com/static/k111/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/class-007/image/form.png)
+![](./images/form.png)
 
 ####　表单组成
 
@@ -43,7 +43,7 @@
 
 - 除了type属性之外，\<input />标记
 
-![](https://nts.newbieol.com/static/k111/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/class-007/image/input.jpg)
+![](./images/input.jpg)
 
 - value可以设置默认值
 - 实现单选功能，需要设置name的值相同
@@ -151,7 +151,7 @@
 
 - select和option属性
 
-![](https://nts.newbieol.com/static/k111/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/class-007/image/option.jpg)
+![](./images/option.jpg)
 
 ```html
 <!DOCTYPE html>
