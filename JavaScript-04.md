@@ -6,7 +6,7 @@
 
 - 全局属性和函数可用于所有内建的 JavaScript 对象。
 
-#### (顶层函数)全局函数
+#### (顶层函数)全局函数--数值转换
 
 ##### isNaN() 检查某个值是不是数字
 
@@ -17,12 +17,21 @@
 - parseInt(string);返回解析后的整数。
 
 ```javascript
-console.log("parseInt('13')= "+ parseInt("13"));		//返回 13
-console.log("parseInt('15',10)= "+ parseInt("15",10));	//返回 19 (10+9)
-console.log("parseInt('11',2)= " + parseInt("11",2));	//返回 3 (2+1)
-console.log("parseInt('17',8)= " + parseInt("17",8));	//返回 15 (8+7)
-console.log("parseInt('1f',16)= " + parseInt("1f",16));	//返回 31 (16+15)
-console.log("parseInt('010')= "+ parseInt("010"));		//未定：返回 10
+console.log(parseInt(""));				//NaN
+console.log(parseInt("1234abc"));		//1234
+console.log(parseInt("abc"));			//NaN
+console.log(parseInt("10.123"));		//10
+console.log(parseInt("0x12"));			//18
+
+console.log(parseInt("070"));			//70, 并没有解析为８进制
+console.log(parseInt("010", 8));		//8
+console.log(parseInt("10", 2));			//2
+console.log(parseInt("20",2));			//超过范围时，转换为NaN
+console.log(parseInt("17", 8));			//15
+console.log(parseInt("10", 10));		//10
+console.log(parseInt("10", 16));		//16
+
+console.log(parseInt("010"));			//10
 ```
 
 ##### parseFloat() 函数可解析一个字符串，并返回一个浮点数。
@@ -99,6 +108,58 @@ document.write(Number(test3)+ "<br />");    //1504443202548
 document.write(Number(test4)+ "<br />");    //999
 document.write(Number(test5)+ "<br />");    //NAN
 ```
+#### 数值转换实例
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>number转换</title>
+  </head>
+  <body>
+
+    输入： <input id="one" type="text" >
+    <button id="btn">点击转换为数字</button>
+    <h1>Number转换结果：<span id="show1"></span></h1>
+    <h1>parseInt转换结果：<span id="show2"></span></h1>
+    <h1>parseFloat转换结果：<span id="show3"></span></h1>
+
+
+    <script type="text/javascript">
+    var input = document.getElementById('one');
+    var btn = document.getElementById('btn');
+    var show1 = document.getElementById('show1');
+    var show2 = document.getElementById('show2');
+    var show3 = document.getElementById('show3');
+
+    btn.onclick = function() {
+      // input输入框中的内容都是字符串形式，
+      // 使用Number转成数字
+      var result = Number(input.value);
+      console.log(result);
+      show1.innerHTML = result;
+
+      // input输入框中的内容都是字符串形式，
+      // 使用parseInt转成数字(整数),还可以指定进制去转换
+      result = parseInt(input.value);
+      // result = parseInt(input.value, 2);
+      // result = parseInt(input.value, 8);
+      // result = parseInt(input.value, 16);
+      console.log(result);
+      show2.innerHTML = result;
+
+      // input输入框中的内容都是字符串形式，
+      // 使用parseFloat转成 小数点
+      result = parseFloat(input.value);
+      console.log(result);
+      show3.innerHTML = result;
+    }
+    </script>
+  </body>
+</html>
+```
+
 ### JS Date对象
 
 - Date 对象用于处理日期和时间
@@ -113,7 +174,7 @@ document.write(Date("1504443202548")+ "<br />");
 
 //转换格式为:=TEXT((B1/1000+8*3600)/86400+70*365+19,"yyyy-mm-dd hh:mm:ss")
 - (2017年)转换Excel将时间戳转换为日期格式的算法
-- 从1970-01-01 08:00:00开始,使用10位/13位的数进行表示,每增加1或者1000,时间增加1秒.(格林威治时间)
+- 从 1970-01-01 08:00:00开始,使用 10位/13位的数进行表示,每增加 1或者 1000,时间增加 1秒.(格林威治时间)
 ```
 
 ```javascript
@@ -212,6 +273,11 @@ console.log(Math.floor(Math.random()*100+1));
 ```javascript
 var myNum=new Number(value);
 var myNum=Number(value);
+
+var num1 = Number("Hello world!"); 	//NaN
+var num2 = Number("");				//0
+var num3 = Number("000011");		//11
+var num4 = Number(true);			//1
 ```
 
 未完...
