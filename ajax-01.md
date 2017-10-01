@@ -223,6 +223,14 @@ $.ajax({
        });
 ```
 
+### 7.启动服务器
+
+```shell
+$ sudo ./node-v6.10.2-linux-x64/bin/node server.js
+$ sudo chmod a+x ./node-v6.10.2-linux-x64/bin/node
+$ ./node-v6.10.2-linux-x64/bin/node server.js
+```
+
 ### 附：
 
 #### get方法发送的源码
