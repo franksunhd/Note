@@ -421,6 +421,8 @@ fun1();				//函数表达式的调用必须在定义之后
 
 #### 函数声明提升
 
+- 变量声明提升:变量的定义在执行时会被提升到当前作用域的顶部，但是赋值的操作位置不变
+
 ```javascript
 	fun();			//调用函数
     /*
@@ -472,6 +474,44 @@ fun1();				//函数表达式的调用必须在定义之后
    //将func2的返回值给result,接收返回值
     var result = func2(10,20);
     console.log(result);
+```
+
+#### arguments对象
+
+- arguments是存储了函数传送过过来实参,并且arguments对象只有函数开始时才可用。
+  arguments 对象只是与数组类似(它并不是 Array 的实例),因为可以使用方括号语法访问它的每一个元素(即第一个元素是 arguments[0] ,第二个元素是 argumetns[1] ,以此类推),使用 length 属性来确定传递进来多少个参数。 
+
+```javascript
+function fun(arg1,arg2) {
+       console.log(fun.length);			//2
+       console.log(arguments.length);	//2
+       console.log(arguments[0]);		//1
+       console.log(arguments[1]);		//2
+   }
+fun(1,2);
+```
+
+#### 变量声明提升
+
+- function 函数的作用域里的变量会外层作用域的变量。
+- 在function作用域内，变量的声明被提升了,但是注意：变量赋值并没有被提升，只是声明被提升了
+- 比如：　
+
+```javascript
+var a = 10;
+    function fun(){
+      // 注意 这里的 var a ;和上边的 a=10 ;没关系
+      console.log(a);  //undefined
+      var a = 100;
+      
+      /*等价代码*/
+      /*
+      var a;
+      console.log(a);//undefined
+      a = 100;
+      */
+    }
+    fun();
 ```
 
 ### 5.数组
@@ -691,6 +731,33 @@ onload = function(){
           return i;
        }
      }
+}
+```
+
+### 7. Lable语句
+
+- 使用 label 语句可以在代码中添加标签,以便将来使用。以下是 label 语句的语法:
+  label: statement
+
+```javascript
+labelone: for (var i = 0; i < 10; i++) {
+      console.log("i=" + i);
+              if (i == 5){
+                break labelone;
+              }
+    }
+```
+
+### 8.With语句
+
+- with 语句的作用是将代码的作用域设置到一个特定的对象中,建议少用。　　　　
+  with 语句的语法如下:
+  with (expression) statement;
+
+```javascript
+with(location){
+  console.log(search.substring(1));		//location.search.substring(1)
+  console.log(hostname);				//location.hostname
 }
 ```
 
