@@ -176,3 +176,13 @@ $ cut -c-2	text.txt	//显示1-2列
 $ cut -c5-	text.txt 	//显示5列到结尾
 ```
 
+### SSH/SCP
+
+```shell
+链接服务器
+ssh linux@192.168.1.24
+
+传输文件/目录
+scp -r ./xxx  linux@192.168.1.24 :~/xxx
+```
+

@@ -206,7 +206,7 @@ $ git checkout master
 $ git merge develop
 ```
 
-- 若出现冲突
+- 若出现冲突.
 
 ```shell
 $ git mergetool
