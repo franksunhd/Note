@@ -4,7 +4,7 @@
 
 ### 1.盒子模型(有两种/border-box/centent-box)
 
-- 　所谓盒子模型就是把HTML页面中的元素看作是一个矩形的盒子，也就是一个盛装内容的容器。每个矩形都由元素的内容、内边距（padding）、边框（border）和外边距（margin）组成。
+- 　所谓盒子模型就是把HTML页面中的元素看作是一个矩形的盒子，也就是一个盛装内容的容器。每个矩形都由元素的内容、内边距（padding）、边框（border）组成。
 
 ![](./images/box.jpg)
 
@@ -162,36 +162,63 @@
 
 －　**父子关系的子完全居中问题（4种方法）**
 
-- **设置margin:**	给父元素加１像素边框/ 给父元素加１像素内边距(padding)，，父元素对应减去２像素．设置margin:  计算上下像素的差 auto ;
+- **宽度和高度未知**	
+  1.   父盒子相对定位，子盒子绝对定位
+  2.   子元素 top、right、bottom、left 全部为0
+  3.   子元素的margin：auto；
 
 
-```html
-margin: 150px auto;
+```css
+.two {
+        width: 500px;
+        height: 300px;
+        background-color: blue;
+        position: relative;
+      }
+
+      .two_s {
+        width: 300px;
+        height: 200px;
+        text-align: center;
+        line-height: 200px;
+        background-color: pink;
+        margin: auto;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        right: 0px;
+        bottom: 0px;
+      }
 ```
 
-- **设置padding:**  只给父元素设置padding值，对应的宽和高减去相应值
+- **宽高是已知的**  
 
 
-```html
-<style>
-    .f {
-      width: 650px;
-      height: 400px;
-      background: yellow;
+1.   父盒子相对定位，子盒子绝对定位
+2.   left : 50% , top : 50% ;
+3.   margin-left : 负的 子元素宽的一半
+4.   margin-top :  负的 子元素 高的一半
 
-      /*
-      如何保持盒子整体大小不变，那么增加padding时，width,height对应减小
-      */
-      padding-left: 150px;
-      padding-top: 100px;
-    }
+```css
+.one {
+        width: 500px;
+        height: 300px;
+        background-color: red;
+        position: relative;
+      }
 
-    .s {
-      width: 500px;
-      height: 300px;
-      background: blue;
-    }
- </style>
+      .one_s  {
+        width: 300px;
+        height: 200px;
+        line-height: 200px;
+        text-align: center;
+        background-color: green;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-left: -150px;
+        margin-top: -100px;
+      }
 ```
 
 - 设置transform:translate(-50%,-50%)(移动)
@@ -221,6 +248,7 @@ margin: 150px auto;
   margin-left: -100px;
   margin-top: -50px;
   */
+  
   /*transform可以直接使用百分比进行设置*/
    /*这里的 -50% 是相对于 自身 的50% */
   transform: translate(-50%,-50%);
