@@ -145,8 +145,6 @@ diff --git a/hello.c b/hello.c
 $ git format-patch -p1
 ```
 
-
-
 - git 打 patch 就是已经有patch 文件了,但客户端版本低,打patch可以修补文件
 
 ```shell
