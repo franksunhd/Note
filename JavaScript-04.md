@@ -305,7 +305,7 @@ var sString = String(s);
 
 ## HTML DOM对象
 
-
+DOM(文档对象模型)是指针对HTML和XML文档的一个API(应用程序编程接口).DOM脱胎于网景公司和微软创始的DHTML(动态HTML).
 
 
 
