@@ -478,6 +478,7 @@ fun1();				//   函数表达式   的调用必须在定义之后
 
 - arguments是存储了函数传送过过来实参,并且arguments对象只有函数开始时才可用。
   arguments 对象只是与数组类似(它并不是 Array 的实例),因为可以使用方括号语法访问它的每一个元素(即第一个元素是 arguments[0] ,第二个元素是 argumetns[1] ,以此类推),使用 length 属性来确定传递进来多少个参数。 
+- arguments对象不是数组,它是一个特殊的集合,他与数组最本质的区别在于,他不可以对元素进行排序
 
 ```javascript
 function fun(arg1,arg2) {
@@ -639,7 +640,7 @@ aa.shift("http");
 alert(aa);
 ```
 
-##### 即可添加也可删除~splice
+##### 替换~splice
 
 - splice:添加删除到数组的指定位置
 
@@ -660,7 +661,7 @@ aa[4] = null;  //将e替换为null
 alert(aa);
 ```
 
-##### 取出指定索引的字串~slice
+##### 切片~slice
 
 - slice() 方法返回一个从开始到结束（**\*不包括结束***）选择的数组的一部分**浅拷贝**到一个新数组对象。例如:[2,8)从2到8,包括 2 不包括 8 .
 
@@ -740,10 +741,10 @@ onload = function(){
   label: statement
 
 ```javascript
-labelone: for (var i = 0; i < 10; i++) {
+label_one: for (var i = 0; i < 10; i++) {
       console.log("i=" + i);
               if (i == 5){
-                break labelone;
+                break label_one;
               }
     }
 ```
