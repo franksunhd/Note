@@ -242,6 +242,12 @@ document.write(boo.toString())
 ```javascript
 var pi_value=Math.PI;
 var sqrt_value=Math.sqrt(15);
+
+//不能直接传递数组
+console.log(Math.max([1,2,3,5,10,-1,88]));
+
+//使用apply对Math.max进行改造，然后可以传数组
+console.log(Math.max.apply(null, [1,2,3,4,4,88]));
 ```
 
 ```javascript
@@ -307,8 +313,100 @@ var sString = String(s);
 
 DOM(文档对象模型)是指针对HTML和XML文档的一个API(应用程序编程接口).DOM脱胎于网景公司和微软创始的DHTML(动态HTML).
 
+### 节点访问
+
+```javascript
+// 获得父节点
+document.parentNode
+one.parentNode
+// 兄弟节点
+one.nextSibling  // 将文本节点也识别为兄弟
+one.nextElementSibling  // 只识别标签作为自己的兄弟
+
+one.previousSibling
+one.previousElementSlibing
+
+// 子节点
+one.firstChild
+one.firstElementChild
+one.lastChild
+
+// 任意子节点
+one.childNodes  // 包含文本节点
+one.children[2]  // 不包含文本节点
+one.children[4]
+```
 
 
 
+### 获得节点
+
+```javascript
+document.getElementById("id");
+document.getElementsByTagName("div");
+document.getElementsByClassName("test");
+```
+
+### 创建节点
+
+```javascript
+var test = document.createElement("div");
+var test1 = document.createElement("span");
+```
+
+### 操作节点
+
+```javascript
+appendChild(要插入的节点)              // 内部末尾插入节点
+insertBefore(要插入的节点,参照节点)     // 外部前边插入节点
+replaceChild(要插入到节点,要替换的节点)  
+//替换节点(被替换的节点还在文档中,但是在文档中已经没有了自己的位置)
+removeChild(要删除的节点)              
+//移除节点(要移除的节点还在文档中,但是在文档中已经没有了自己的位置)
+```
+
+### 节点属性相关
+
+```javascript
+getAttribute("属性"),  获得属性值
+setAttribute("属性", "属性值"), 设置属性
+removeAttribute("属性") , 移除属性
+```
+
+### 修改多个css属性
+
+```javascript
+var node = document.getElementById(“id”);
+node.style.cssText = “width:100px;height:200px;color:red;”;
+```
+
+### 移除节点
+
+```javascript
+var a = document.getElementById(“id”);
+var b = a.removeChild(a.firstChild);//移除第一个节点
+```
+
+### 克隆节点
+
+```javascript
+var a = document.getElementById(“id”);
+var clone = a.cloneNode(true);
+/*
+创建副本节点
+  {
+  true 深复制,复制节点及其整个子节点树
+  flase 浅复制,只复制节点本身
+  不复制添加到DOM节点中的js属性
+  }
+*/
+```
+
+### 处理文本节点
+
+```javascript
+normalize() //处理文档树中的文本节点
+// 调用该方法:后代节点遇到 空文本节点,就删除;遇到多个相邻的文本节点合并为一个文本节点.
+```
 
 ## Browser对象
