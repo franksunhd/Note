@@ -6,15 +6,13 @@
 
 在如今各个分辨率显示器N足鼎立的时期，页面采用流动性布局（亦可称自适应布局）不失为一个好选择。当然，具体实现不是那么容易，需要一定的css功力和实践经验。本文不讲细节，只讲外部的自适应架构，这也是实现整个页面自适应的前提。目前为止，我所熟知的左中右三栏宽度自适应于浏览器的方法有三个：[绝对定位法](http://www.zhangxinxu.com/wordpress/2009/11/%E6%88%91%E7%86%9F%E7%9F%A5%E7%9A%84%E4%B8%89%E7%A7%8D%E4%B8%89%E6%A0%8F%E7%BD%91%E9%A1%B5%E5%AE%BD%E5%BA%A6%E8%87%AA%E9%80%82%E5%BA%94%E5%B8%83%E5%B1%80%E6%96%B9%E6%B3%95/#m1)，[margin负值法](http://www.zhangxinxu.com/wordpress/2009/11/%E6%88%91%E7%86%9F%E7%9F%A5%E7%9A%84%E4%B8%89%E7%A7%8D%E4%B8%89%E6%A0%8F%E7%BD%91%E9%A1%B5%E5%AE%BD%E5%BA%A6%E8%87%AA%E9%80%82%E5%BA%94%E5%B8%83%E5%B1%80%E6%96%B9%E6%B3%95/#m2)以及[自身浮动法](http://www.zhangxinxu.com/wordpress/2009/11/%E6%88%91%E7%86%9F%E7%9F%A5%E7%9A%84%E4%B8%89%E7%A7%8D%E4%B8%89%E6%A0%8F%E7%BD%91%E9%A1%B5%E5%AE%BD%E5%BA%A6%E8%87%AA%E9%80%82%E5%BA%94%E5%B8%83%E5%B1%80%E6%96%B9%E6%B3%95/#m3)。这些方法简洁实用，且无兼容性问题。如果您想在您的页面上使用流动性布局，相信本文给您一些启示的。
 
-### 2.两栏布局的两种方法
+### 2.两栏布局的三种方法
 
 #### 1.浮动
 
 ```html
 <style>
-.content-01 ,
-.content-02 ,
-.content-03{
+.content-01{
   width: 100%;
   font-size: 30px;
   position: relative;
@@ -44,11 +42,13 @@
 
 ```html
 <style>
+  .content-02 {
+    position: relative;
+  }
   .content-02 .left {
   width: 200px;
   height: 200px;
   background: red;
-  position: relative;
 }
 
 .content-02 .right {
