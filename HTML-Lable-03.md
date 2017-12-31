@@ -269,6 +269,24 @@ $("input").val(text);
 ### 5.GET和POST方法区别
 
 1. 在客户端，Get方式在通过URL提交数据，数据在URL中可以看到；POST方式，数据放在HTTP包的body中。
-2.  GET方式提交的数据大小有限制（因为浏览器对URL的长度有限制），而POST则没有此限制。
+2. GET方式提交的数据大小有限制（因为浏览器对URL的长度有限制），而POST则没有此限制。
 3. 安全性问题。正如在（1）中提到，使用 Get 的时候，参数会显示在地址栏上，而 Post 不会。所以，如果这些数据是中文数据而且是非敏感数据，那么使用 get；如果用户输入的数据不是中文字符而且包含敏感数据，那么还是使用 post为好。
 4. 服务器取值方式不一样。GET方式取值，如php可以使用\$\_GET来取得变量的值，而POST方式通过\$\_POST来获取变量的值。
+
+### 6.placeholder 浏览器兼容性问题
+
+```html
+<!-- 兼容谷歌和苹果 -->
+.two::-webkit-input-placeholder{
+       color: blue;
+ }
+<!-- 兼容IE -->
+ .two::-ms-input-placeholder {
+       color: blue;
+ }
+<!-- 兼容火狐 -->
+ .two::-moz-placeholder {
+       color:blue;
+}
+```
+
