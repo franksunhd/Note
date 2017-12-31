@@ -132,6 +132,7 @@
 	padding: 0
 }
 取消浏览器的默认属性。
+解决:display:inline-block;
 ```
 
 #### 嵌套上外边距合并问题的解决办法（块元素）
@@ -142,6 +143,7 @@
 解决方法：
     1. 给父元素添加边框 border,相对的父元素减去相对应的值
     2. 给父元素添加padding,相对应的父元素减去对应的值
+    3. 给父元素设置 overflow:hidden
 ```
 
 #### 左右外边距合并
@@ -312,6 +314,21 @@
 
 ```html
 <p style="clear:both;"></p>
+一般: <br clear = "all">
+
+<div class="box clear">
+    <div class="left">left</div>
+    <div class="right">right</div>
+  	<!-- 
+		center 这里的clear:both；消除了父元素下左右浮动元素对center的影响
+		但是用overflow:hidden；不行,他的适用范围是针对域父元素同级的元素
+	-->
+    <div class="center" style="clear:both;">center</div>
+  </div>
+<!--
+适用范围:
+	清除与设置clear:both;属性元素同级的前边的元素的浮动
+-->
 ```
 
 | clear属性值 | 含义     |
@@ -324,8 +341,21 @@
 
 ##### 3.直接给父盒子设置overflow属性
 
-```
+```html
 overflow：hidden;
+<div class="box">
+    <div class="left">left</div>
+    <div class="right">right</div>
+  	<!-- 
+		center 这里的clear:both；消除了父元素下左右浮动元素对center的影响
+		但是.box用overflow:hidden；不行,他的适用范围是针对域父元素同级的元素
+	-->
+    <div class="center" style="clear:both;">center</div>
+  </div>
+<div class="next">next</div>
+<!--
+	适用范围:清除有子元素引起的浮动;box这个父盒子设置了overflow之消除了浮动元素对next的影响
+-->
 ```
 
 这种方式简单方便，但是如果页面一旦出现了定位，那么定位可能会受到影响。
@@ -353,6 +383,13 @@ overflow：hidden;
 	zoom: 1;				//兼容ie
 } 							<!--可以查看新浪等网站查看 -->
 ```
+
+#### 3) 解决父元素高度为0的方式:
+
+- 让父元素也发生浮动
+- 给父元素添加inline-block; width需要重新设置
+- 给父元素设置overflow:hidden;
+- 空标签
 
 ### 4. visibility 属性(设置元素是否可见)
 
@@ -636,13 +673,54 @@ overflow：hidden;
   </body>
 ```
 
+### 消除 img 标签在盒模型中的默认间隙
 
+#### 存在的原因:
 
+- 在CSS中有条线，而且inline默认的垂直对齐方式vertical-align默认值是baseline(基线对齐)，也是以**x字母**的下方为基准。字体的大小直接影响着超出基线间隙，所以字体大小可以影响基线间隙。
+- 同时行内本身的`line-height`是会移动基线的（文字垂直居中可以通过line-height实现）。所以行高也是可以影响基线的位置。
 
+#### 解决方案
 
+- 修改img行内元素的垂直居中方式，让它不在以基线对齐。
 
+```css
+img {
+  vertical-align: bottom;
+}
+```
 
+- 修改行高，使行高变小，这样基线下方的位置基本可以忽略。
 
+```css
+div {
+    line-height: 0px;
+}
+```
+
+- 修改img行内元素的字体大小，基线的下方间隙是部分字体超过基线下方而产生的，如果把父元素的`font-size`变的超小，基线的下方距离将忽略不计。(缺点:字体变大就会间隙变大)
+
+```css
+div {
+    font-size: 0px;
+}
+```
+
+- 直接让img变成块级元素，不在受行内基线的影响。
+
+```css
+img {
+    display: block;
+}
+
+/* 浮动也可以让元素变成块级 */
+img {
+    float：left;
+}
+
+/* 只要能变成块级的属性都可以 */
+...
+```
 
 
 
