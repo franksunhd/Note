@@ -14,6 +14,16 @@
 <!--
 1em = 当前的字体大小(可以是继承过来的)
 font-size: 2em;
+
+css3新特性: 新单位 rem
+需要设置根节点的字体,相当于参考字体
+html {
+	font-size:16px;
+}
+
+p {
+	font-size:1.5rem; //相当于24px
+}
 -->
 ```
 
@@ -169,6 +179,12 @@ text-indent:2em;	<!--首行缩进２字符-->
 - line-height : (height) ;
 
 
+### 11.大小写转换 text-transform
+
+- uppercase 转换为大写
+- lowercase 转换为小写
+- capitalize 首字母大写
+
 
 ###  自学属性
 
@@ -230,8 +246,35 @@ text-indent:2em;	<!--首行缩进２字符-->
 ### 5.背景固定　background-attachement
 
 - background-attachement : fixed ;	fixed 表示固定
+- 应用场景:背景比较大,视窗口比较小,视窗口的滚动可以看见图片
 
-### 6.综合表示
+### 6.背景大小 background-size
+
+#### background-size 设置背景图片的尺寸
+
+属性值有:
+
+- **cover**会自动调整缩放比例，背景大小 >  元素大小，如有溢出部分则会被隐藏。
+- **contain**会自动调整缩放比例，元素大小  >  背景大小  。
+- 也可以使用**长度单位或百分比** 
+
+```html
+<!--
+contain: 背景图片 小于等于 元素
+  cover: 背景图片 大于等于 元素
+-->
+
+<!--
+background-size: cover;
+background-size: 520px 320px;
+/*width, height*/
+-->
+
+/*一步到位，和元素宽高一致*/
+background-size: 100% 100%;
+```
+
+### 7.综合表示
 
 -　background: red 　url("./images/zhaosi.jpg") 　no-repeat 　10px 　20px　fixed ;
 
@@ -250,6 +293,7 @@ text-indent:2em;	<!--首行缩进２字符-->
 
 - 值为０，不显示。
 - 不适合的情况：只想使背景透明，文本无影响。
+
 
 
 
