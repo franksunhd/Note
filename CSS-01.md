@@ -471,6 +471,8 @@ input[type="text"]:disabled {
 
 #### 伪对象选择符
 
+- 这里CSS3使用双冒号是为了区别于伪类选择符，原来的写法依然有效.
+
 ##### E:first-letter/E::first-letter 设置对象内第一个字符的样式
 
 ```html
@@ -484,7 +486,10 @@ input[type="text"]:disabled {
       我爱你 中国  <br>
       I love you China <br>
 </p>
-<!--结果为"我"变大变粗-->
+<!--
+结果为"我"变大变粗
+此伪对象仅作用于块对象。内联对象要使用该伪对象，必须先将其设置为块级对象。
+-->
 ```
 
 ##### E:first-line/E::first-line 设置对象内第一行字符的样式
@@ -500,7 +505,10 @@ input[type="text"]:disabled {
       我爱你 中国  <br>
       I love you China <br>
 </p>
-<!--结果为"我爱你 中国"变大变粗-->
+<!--
+结果为"我爱你 中国"变大变粗
+此伪对象仅作用于块对象。内联对象要使用该伪对象，必须先将其设置为块级对象。
+-->
 ```
 
 ##### E:before/E::before  选中元素内部的头部 ,必须和content配合使用
@@ -516,8 +524,8 @@ input[type="text"]:disabled {
   .one:empty::after {
         content: "我是空的after";
       }
-
 </style>
+<!-- 用来和content属性一起使用，并且必须定义content属性 -->
 <div class="one">空间商客户开始角度好看见好看</div>
     <div class="one"></div>
     <div class="one"></div>
@@ -527,6 +535,7 @@ input[type="text"]:disabled {
 ##### E:placeholder 设置对象文字占位符的样式。
 
 ```html
+<!-- 设置placeholder的显示颜色 -->
 <style>
 /*
      浏览器的兼容性问题
