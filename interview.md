@@ -28,3 +28,140 @@
 ### 10.两栏布局和三栏布局 
 
 ### 11.Ajax定义，特点，优缺点等
+
+### 12.盒子内元素垂直居中问题
+
+```html
+<style type="text/css">
+		#box{
+			border: 5px solid red;
+			height: 150px;
+			text-align: center;
+
+			/* vertical-align: middle; */
+
+			/*div->table
+			ie67无效
+			*/
+			display: table;
+			width: 100%;
+		}
+		#box span{
+			vertical-align: middle;
+			/*span->td*/
+			display: table-cell;
+		}
+
+
+		*{padding: 0;margin: 0}
+		#tb{
+			border-collapse: collapse;
+		}
+
+		#tb img{
+			width: 150px;
+			vertical-align: middle;
+
+		}
+		/*
+		vertical-align：用到子元素td上，在table中有效
+		*/
+		#tb td:last-child{
+			/* vertical-align: middle; */
+		}
+
+		#box2{
+			border: 5px solid blue;
+
+			/*height: 300px;*/
+		}
+		/*图片作为参照！高度和父元素一样高！！！*/
+		#box2 img{
+			width: 150px;
+
+			/*其他内联元素作为参照*/
+			vertical-align: middle;
+		}
+		#box2 span{
+			vertical-align: middle;
+		}
+
+		.baseline{
+			display: inline-block;
+			width: 0px;
+			height: 100%;
+			background: red;
+
+			vertical-align: middle;
+		}
+
+		#box3{
+			border: 5px solid green;
+			height: 200px;
+		}
+		#box3 img{
+			width: 100px;
+			vertical-align: middle;
+		}
+		#box3 a{
+			vertical-align: middle;
+		}
+		#box3 span{
+			vertical-align: middle;
+		}
+
+		/*高度必须和父元素相等，作为其他元素垂直布局的参考线*/
+		.bsLine:before{
+			content: "";
+			visibility: hidden;
+
+			display: inline-block;
+			width: 0px;
+			height: 100%;
+			background: red;
+			vertical-align: middle;
+		}
+
+	</style>
+</head>
+<body>
+	<div id="box">
+		<span>内联span</span>
+	</div>
+
+	<div>
+		<table id="tb" border="1">
+			<tr>
+				<td>
+					<img src="img/pic.jpg">
+				</td>
+				<td>
+					<div>
+						<h3>title</h3>
+						<p>内容</p>
+					</div>
+				</td>
+			</tr>
+		</table>
+	</div>
+
+
+	<hr>
+	<div id="box2">
+		<img src="img/pic.jpg">
+
+		<span>span</span>
+		-------
+	</div>
+
+	<!-- <span class="baseline"></span> -->
+
+	<div id="box3" class="bsLine">
+		<img src="img/pic.jpg">
+
+		<span>span</span>
+		-------
+		<a href="###">链接</a>
+	</div>
+```
+
