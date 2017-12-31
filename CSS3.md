@@ -197,6 +197,8 @@ background-size: 100% 100%;
 
 ![](./images/background1.png)
 
+#### backface-visibility: hidden; /*不显示背景的背面*/
+
 ### 9.CSS 3渐变
 
 - CSS 渐变 是在 CSS3 Image Module 中新增加的类型. 使用 CSS 渐变可以在两种颜色间制造出平滑的渐变效果. 用它代替图片，可以加快页面的载入时间、减小带宽占用。同时，因为渐变是由浏览器直接生成的，它在页面缩放时的效果比图片更好，因此你可以更加灵活、便捷的调整页面布局。 
