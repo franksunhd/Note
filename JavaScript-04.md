@@ -270,6 +270,88 @@ console.log(Math.random());
 console.log(Math.floor(Math.random()*100+1));
 ```
 
+```javascript
+// 产生 6 个 0 - 10之间的不重复的 随机数
+// 方法一 :  封装函数
+// 1. 封装查找数组中有没有指定元素
+		function find(arr, obj) {  
+	        var i = arr.length;  
+	        while (i--) {  
+	            if (arr[i] === obj) {  
+	                return true;  
+	            }  
+	        }  
+	        return false;  
+	    }
+
+	    btn1.onclick = function () {
+	    	var count1 = 0;
+	    	var arr1 = [];  // 存放6个元素的数组
+	    	while(1){
+	    		var Randomnum = Math.floor(Math.random() * 10 + 1);
+	    		var m = find(arr1,Randomnum);
+	    		if(m === false){
+	    			arr1.push(Randomnum);
+	    			count1++;
+	    			if (count1 === 6) {
+	    				break;
+	    			}
+	    		}
+	    	}
+
+	    	item1.innerHTML = arr1;
+	    }
+ // 方法二 :  $.inArray(value,array)
+        btn2.onclick = function () {
+	    	var count2 = 0;
+	    	var arr2 = [];  // 存放6个元素的数组
+	    	while(1){
+	    		var Randomnum = Math.floor(Math.random() * 10 + 1);
+	    		
+	    		// 2.jQuery inArray(value,array);  返回值 没有为 -1
+	    		var m1 = $.inArray(Randomnum,arr2);
+	    		console.log(m1);
+	    		if(m1 === -1){
+	    			arr2.push(Randomnum);
+	    			count2++;
+	    			if (count2 === 6) {
+	    				break;
+	    			}
+	    		}
+	    	}
+
+	    	item2.innerHTML = arr2;
+	    }
+  // 方法三:
+function Random(len, min, max) {
+var arr = [];
+var json = {};
+while (arr.length < len) {
+//产生单个随机数
+var num = Math.floor(Math.random() * (max - min + 1)) + min;
+//通过判断json对象的索引值是否存在 来标记 是否重复
+if (!json[num]) {
+	json[num] = 1;
+	arr.push(num);
+	}
+}
+return arr;
+}
+console.log(Random(6, 0, 10)); //生成6个从0-10之间不重复的随机数
+
+// 方法四:
+var arr = [];
+while(arr.length <= 6){
+		var num = Math.floor(Math.random() * 11);
+		if(arr.indexOf(num) == -1){
+			arr.push(num)
+		}
+	}
+alert(arr);
+```
+
+
+
 未完...
 
 ### JS Number对象
