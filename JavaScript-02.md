@@ -421,16 +421,34 @@ fun1();				//   函数表达式   的调用必须在定义之后
 
 #### 函数声明提升
 
+- 函数声明提升:函数可以定义在可调用的任何位置，在js引擎解释运行该代码时，会自动将函数提升到该作用域的顶部！
+
 ```javascript
-	fun();			//调用函数
-    /*
-    js中的函数有个特点：声明提升。
-    函数可以定义在可调用的任何位置，在javascript引擎解释运行该代码时，会
-    自动将函数提升到该作用域的顶部！！！！！！
-    */
-    function fun(){
-      console.log("fun......");
+fun();			//调用函数
+/*
+js中的函数有个特点：声明提升。
+函数可以定义在可调用的任何位置，在javascript引擎解释运行该代码时，会
+自动将函数提升到该作用域的顶部！！！！！！
+*/
+function fun(){
+  console.log("fun......");
+}
+```
+#### 函数表达式的声明提升
+
+- 它和变量的声明提升类似.
+
+```javascript
+fun1();  //fun1 is not a function
+    var fun1 = function(){
+      alert("fun1()...");
     }
+    // 等价于
+    // fun1();
+    // var fun1;
+    // fun1 = function(){
+    //   alert("fun1()...");
+    // }
 ```
 
 #### 函数传参
@@ -455,6 +473,8 @@ fun1();				//   函数表达式   的调用必须在定义之后
    console.log(result);			//当没有显示返回(return)，返回值是undefined
 ```
 
+#### 函数地址作为参数传递
+
 ```javascript
 /*
   功能：求和
@@ -472,6 +492,28 @@ fun1();				//   函数表达式   的调用必须在定义之后
    //将func2的返回值给result,接收返回值
     var result = func2(10,20);
     console.log(result);
+
+
+//  函数地址作为参数传递
+function load(callback) {
+	// 加载图片..........
+			
+	// 操作完成之后执行 success  可读性不强
+	success();
+		
+	// 回调 success
+	callback();
+}
+
+// 可以调用下面声明创建的函数
+// 函数的声明和赋值全部前置
+// 函数的声明提升:
+// success();
+function success() {
+	console.log("load加载完毕!");
+}
+// 函数名 success 作为参数传递给 load
+load(success);
 ```
 
 #### arguments对象
@@ -762,3 +804,6 @@ with(location){
 }
 ```
 
+### 9.正确的描述变量作用域问题
+
+- ECMA Script 5中的javascript只区分全局作用域和函数作用域，不是以花括号{}区分的。
