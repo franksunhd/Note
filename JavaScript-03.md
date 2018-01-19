@@ -1,4 +1,4 @@
-## JavaScript的函数重载/事件机制
+## JavaScript的函数重载/事件机制/定时器
 
 [TOC]
 
@@ -125,3 +125,47 @@ onload = function() {
 - 键盘按下
 - 表单
 - 页面事件
+
+### 3.定时器
+
+- 页面中有很多效果是动态的发生变化，比如轮播图，每隔一定的时间都换一张图片显示，这些效果都可以用javascript的定时器实现。 
+
+#### 间隔定时器 setInterval()
+
+- setInterval(callback, delay);//每隔delay毫秒的时间就执行一次fun函数 
+
+```javascript
+var si = setInterval("alert('helloworld')", 1000);//每隔1s输出helloworld
+function fun(){
+    console.log("helloworld");
+}
+
+si = setInterval(fun, 1000); //传入函数也可以，比较常用
+```
+
+- 注意：setInterval如果调用的程序在间隔的时间内没有完成，那么仍然会再次执行该函数 
+
+#### 取消间隔定时器clearInterval()
+
+```javascript
+var si = setInterval(fun, 1000);
+clearInterval(si);//需要用到setInterval返回的id
+```
+
+#### 超时定时器 setTimeout(callback,delay);
+
+- 间隔delay毫秒之后执行函数callback,并且只执行一次。 
+
+```javascript
+// 延时调用
+		setTimeout(run,2000);
+
+		function run() {
+			console.log("run执行...");
+		}
+```
+
+#### 取消超时定时器clearTimeout()
+
+- setTimeout函数会在指定的时间过后运行函数，并且只运行一次，所以可以每次重新调用。而setInterval却没有被自己所调用的函数所束缚，它只是简单地每隔一定时间就重复执行一次那个函数,如果在间隔时间内函数没有执行完，也会继续执行.使用arguments.callee
+   可以返回调用函数本身, 使用setTimeout可以更好取代setInterval。使用clearTimeout()可以取消超时。
