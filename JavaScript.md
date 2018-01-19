@@ -4,7 +4,7 @@
 
 ### 1.JavaScript 发展简介
 
-![]()
+![](./images/JS.png)
 
 ### 第二章 在HTML中使用JavaScript
 
