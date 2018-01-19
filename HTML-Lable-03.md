@@ -290,3 +290,74 @@ $("input").val(text);
 }
 ```
 
+### 7. HTML 框架 iframe
+
+```html
+<p>我是 SVG</p>
+	<iframe frameborder="0" name="iframe_a" src="./02-html框架iframe.html" width="1000" height="500"></iframe>
+
+	<p><a href="./01.svg" target="iframe_a">链接本页面</a></p>
+	<!--
+		移除 iframe 的边框
+		frameborder="0"
+	-->
+```
+
+### 8. 数学标记语言 MathML
+
+- MathML 是数学标记语言,是一种基于 XML 的标准.用来在网页上书写数学符号和公式的置标语言
+- 使用具有局限性 只可以在Firefox 和 Safari 上使用, Chrome 和 Opera 上无效
+
+```html
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+		 <mrow>
+       <msup><mi>a</mi><mn>2</mn></msup>
+       <mo>+</mo>
+
+       <msup><mi>b</mi><mn>2</mn></msup>
+       <mo>=</mo>
+
+       <msup><mi>c</mi><mn>2</mn></msup>
+     </mrow>
+	 </math>
+	 <br>
+	 <math>
+    <mrow>
+       <msup>
+          <mi>x</mi>
+          <mn>2</mn>
+       </msup>
+       <mo>+</mo>
+       <mrow>
+          <mn>4</mn>
+          <mi>x</mi>
+       </mrow>
+       <mo>+</mo>
+       <mn>4</mn>
+			 <mo>=</mo>
+	     <mn>0</mn>
+    </mrow>
+   </math>
+	 <br>
+	 <math>
+		<mrow>
+		 <mi>A</mi>
+		 <mo>=</mo>
+
+		 <mfenced open="[" close="]">
+				<mtable>
+					 <mtr>
+							<mtd><mi>x</mi></mtd>
+							<mtd><mi>y</mi></mtd>
+					 </mtr>
+
+					 <mtr>
+							<mtd><mi>z</mi></mtd>
+							<mtd><mi>w</mi></mtd>
+					 </mtr>
+				</mtable>
+		 </mfenced>
+		</mrow>
+	 </math>
+```
+
