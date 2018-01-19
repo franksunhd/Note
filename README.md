@@ -53,6 +53,6 @@
 - [Canvas](./Canvas.md)
 - [SVG](./SVG.md)
 - [ZepTo.js](./Zepto.md)
-- [微信公众号的开发](./WeChat.md)
+- [微信公众号的开发](./WeChat-01.md)
 
 
