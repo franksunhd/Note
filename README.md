@@ -50,7 +50,9 @@
 - [NodeJs](./node-01.md)
 - [JavaScript高级程序设计](./JavaScript.md)
 - [HTTP协议](./HTTP.md)
-- [Canvas](./Canvas-01.md)
+- [Canvas](./Canvas.md)
+- [SVG](./SVG.md)
+- [ZepTo.js](./Zepto.md)
+- [微信公众号的开发](./WeChat.md)
 
 
-++
