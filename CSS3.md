@@ -34,6 +34,7 @@
   2.子选择符(E>F)
   3.相邻选择符(E+F)
   4.兄弟选择符(E~F)
+
 - 属性选择器
   1.E[att]
   2.E[att=“val”]
@@ -42,6 +43,7 @@
   5.E[att$=“val”]
   6.E[att*=“val”]
   7.E[att|=“val”] 
+
 - 伪类选择器
   常用：
   E:link
@@ -52,6 +54,9 @@
   E:first-child
   E:last-child
   E:nth-child
+
+  E:nth-of-type
+
 - 伪元素
   1.E:first-letter/E::first-letter
   2.E:first-line/E::first-line
@@ -138,7 +143,21 @@ text-shadow: -1px -1px 1px #000, 1px 1px 1px #FFF;
 
 ![](./images/border-image2.png)
 
-### 7.CSS 3盒子
+```css
+.box {
+  border: 27px solid red;
+  border-image-source: url(./img/border.png);
+  /* 
+   * 上右下左 
+   *  27px 的距离各切一刀,把图片分为一个九宫格,九宫格的四个角放到元素的四个角上
+   * 
+   */
+   border-image-slice: 27;
+   border-image-repeat: round;
+}
+```
+
+### 7.CSS 3 怪异盒子
 
 #### 指定盒子类型(box-sizing)
 
@@ -228,6 +247,47 @@ background-size: 100% 100%;
 - `background-image: radial-gradient(ellipse at center, yellow, red, blue, pink,orange);`
 
 ![](./images/radial-gradient.png)
+
+
+
+#### 倒影制作 (目前只有 webkit 内核支持)
+
+```html
+<style type="text/css">
+			p {
+				width: 500px;
+				height: 200px;
+				font-size: 60px;
+				
+				border: 5px solid red;
+				background-image: linear-gradient(90deg,red,yellow);
+				
+				/*
+				 * 倒影
+				 * 目前只有 -webkit- 支持 没有标准的写法,
+				 * 参数1 位置above below
+				 * 参数2 倒影和元素之间的间隔距离
+				 * 参数3 渐变,必须有透明色,另一个颜色随意 
+				 */
+				
+				-webkit-box-reflect: below 10px linear-gradient(0deg,yellow 10%,transparent 90%);
+              
+              img {
+				width: 300px;
+				-webkit-mask: url(img/mask2.png) no-repeat;
+				-webkit-mask-position: top center;
+			}
+			
+			
+			/*
+			 * 蒙版:完全透明的蒙版图会遮挡原始图
+			 * 
+			 * 不透明会完全显示原始图
+			 * 半透明蒙版图会有模糊效果
+			 */
+			}
+		</style>
+```
 
 ### 10.CSS 3过渡
 
@@ -729,6 +789,9 @@ transform-origin:50% 50%;(默认50% 50%)
 	maximum-scale=1：允许用户缩放到得最大比例（默认为1）
 	user-scalable=no：用户不能手动缩放
 -->
+<!--
+	viewport:虚拟窗口
+-->
 ```
 
 #### 媒体查询样式
@@ -779,7 +842,19 @@ transform-origin:50% 50%;(默认50% 50%)
 }
 ```
 
+### 16 新单位 rem 和 em
 
+- 这个单位与em有什么区别呢？区别在于使用rem为元素设定字体大小时，仍然是相对大小，但相对的只是HTML根元素。这个单位可谓集相对大小和绝对大小的优点于一身，通过它既可以做到只修改根元素就成比例地调整所有字体大小，又可以避免字体大小逐层复合的连锁反应。目前，除了IE8及更早版本外，所有浏览器均已支持rem。对于不支持它的浏览器，应对方法也很简单，就是多写一个绝对单位的声明。这些浏览器会忽略用rem设定的字体大小。下面就是一个例子：
+
+```css
+html {
+  font-size:16px;
+}
+p {
+  font-size:14px; 
+  font-size:0.875rem;
+}
+```
 
 
 
