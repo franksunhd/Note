@@ -94,7 +94,8 @@ font-style属性用于定义字体风格，如设置斜体、倾斜或正常字�
 - 英文单词表示; red/green;yellow;blue;
 - 16进制表示法　#000000
 - RGB三色法　R:0~255   G:0~255   B:0~255（可以是0~255 的数字，也可以是百分比）
-- 色调，饱和度，亮度
+- hsla
+- color: lighten(#ccc, 10%) == #e6e6e6 /  color:darken(#ccc,10%); #b3b3b3
 
 ###  2.字间距 letter-spacing
 
