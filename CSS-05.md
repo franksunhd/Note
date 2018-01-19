@@ -390,38 +390,6 @@ h3 {
   }
 }
 
-//css style
-//-------------------------------
-.parent-1 {
-  color: #f00;
-}
-.parent-1 .child {
-  width: 100px;
-}
-
-.parent-2 {
-  color: #f00;
-}
-.child {
-  width: 200px;
-}//sass style
-//-------------------------------
-//没有跳出
-.parent-1 {
-  color:#f00;
-  .child {
-    width:100px;
-  }
-}
-
-//单个选择器跳出
-.parent-2 {
-  color:#f00;
-  @at-root .child {
-    width:200px;
-  }
-}
-
 //多个选择器跳出
 .parent-3 {
   background:#f00;
@@ -442,6 +410,13 @@ h3 {
 }
 .parent-1 .child {
   width: 100px;
+}
+
+.parent-2 {
+  color: #f00;
+}
+.child {
+  width: 200px;
 }
 
 .parent-2 {
