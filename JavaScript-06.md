@@ -402,9 +402,9 @@ Person.prototype={
       console.log(Person.prototype == person.__proto__);  //true
 ```
 
-
-
 #### 原型链继承
+
+![](./images/Prototype.png)
 
 ```javascript
 <script type="text/javascript">
