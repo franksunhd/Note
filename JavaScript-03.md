@@ -163,6 +163,31 @@ clearInterval(si);//需要用到setInterval返回的id
 		function run() {
 			console.log("run执行...");
 		}
+
+// 1.超时定时器只调用一次,如何实现无限调用
+setTimeout(function() {
+			pn++;
+			console.log(pn);
+            // callee 被调用的函数 在这里指代这个匿名函数
+			// console.log(arguments.callee);
+			setTimeout(arguments.callee,1000);
+		},1000);
+
+// 2.
+		var pn = 0;
+		var timedId;
+        function loop() {
+			pn++;
+			console.log(pn);
+            // 递归循环
+			// loop();
+
+            //  函数里面代码量很大,同步的请求可能等上1s或以上,
+            //  导致一次函数还没执行结束就开始执行下一次
+			timedId = setTimeout(loop,1000);
+        }
+
+		loop();	
 ```
 
 #### 取消超时定时器clearTimeout()
