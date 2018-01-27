@@ -39,7 +39,7 @@
 - [jQuery中的事件操作(鼠标/键盘/浏览器/事件绑定/表单/对象)](./jQuery-04.md)
 - [jQuery中的遍历](./jQuery-05.md)
 - [jQuery中的效果](./jQuery-06.md)
-- [详解浏览器的渲染页面过程](./onload.md)
+- [详解浏览器的渲染页面过程/控制台输出](./onload.md)
 - [元素的嵌套原则](./Elements-nested.md)
 - [常用命令/VIM/Shell](./Note-C.md)
 - [面试问题总结](./imterview.md)
