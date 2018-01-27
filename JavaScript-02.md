@@ -521,6 +521,7 @@ load(success);
 - arguments是存储了函数传送过过来实参,并且arguments对象只有函数开始时才可用。
   arguments 对象只是与数组类似(它并不是 Array 的实例),因为可以使用方括号语法访问它的每一个元素(即第一个元素是 arguments[0] ,第二个元素是 argumetns[1] ,以此类推),使用 length 属性来确定传递进来多少个参数。 
 - arguments对象不是数组,它是一个特殊的集合,他与数组最本质的区别在于,他不可以对元素进行排序
+- callee:(被调用的函数)每个函数中都有,指代当前被调用的函数
 
 ```javascript
 function fun(arg1,arg2) {
@@ -807,3 +808,32 @@ with(location){
 ### 9.正确的描述变量作用域问题
 
 - ECMA Script 5中的javascript只区分全局作用域和函数作用域，不是以花括号{}区分的。
+
+### 10.封装一个排序 sort 的函数
+
+```javascript
+var numbers = [20,50,30,10];
+
+		// 封装一个排序函数
+        function sort(arr,callback) {
+			for(var i = 0,len = arr.length; i < len - 1; i++)			 {
+				for(var j = 0; j < len - 1 -i; j++) {
+					var res = callback(arr[j],arr[j+1]);
+					if (res) {
+						var temp = arr[j];
+						arr[j] = arr[j+1];
+						arr[j+1] = temp;
+					}
+				}
+			}
+        }
+
+        // 调用 sort 函数
+		sort(numbers,function(a,b){
+			return a < b;
+		});
+
+        // 打印数组信息
+		console.log(numbers);
+```
+
