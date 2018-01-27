@@ -1,4 +1,4 @@
-## 详解浏览器渲染页面过程
+## 详解浏览器渲染页面过程/控制台输出
 
 [TOC]
 
@@ -39,3 +39,138 @@
 （3）若要频繁获取计算后的样式，请暂存起来；
 （4）降低受影响的节点：在页面顶部插入节点将影响后续所有节点。而绝对定位的元素改变会影响较少的元素；
 （5）批量添加DOM：多个DOM插入或修改，应组成一个长的字符串后一次性放入DOM。使用innerHTML永远比DOM操作快。（特别注意：innerHTML不会执行字符串中的嵌入脚本，因此不会产生XSS漏洞）。
+
+ 
+
+
+
+—————————————————
+
+### 5.控制台(console)
+
+#### 控制台打印日志
+
+```javascript
+console.log("log");
+console.info("info");
+console.debug("debug");
+console.error("error");
+console.warn("warn");
+```
+
+#### 打印方法中的占位符
+
+```javascript
+console.log('%s 买了%d个西瓜,花了%f元钱.','小明',2,21.5);
+```
+
+#### 控制台分组打印/console.group()
+
+```javascript
+console.group('第一组');
+console.log('第一组-1');
+console.log('第一组-2');
+console.groupEnd();
+
+console.group('第二组');
+console.log('第二组-1');
+console.log('第二组-2');
+console.groupEnd();
+```
+
+#### 控制台打印对象信息/console.dir()
+
+```javascript
+var svendInfo = {
+  site:"http:svend.cc",
+  github:"https://github.com/JSW5297",
+  email:"jinshouw@163.com",
+  sayHi:function(name){
+    console.log('Hello '+ name);
+  }
+};
+// 控制台打印对象信息
+console.dir(svendInfo);
+```
+
+#### 控制台打印 DOM 节点或 XML/console.dirxml()
+
+```javascript
+// 控制台打印DOM节点或XML
+var svendInfo = document.getElementById('svendInfo');
+console.dirxml(svendInfo);
+```
+
+#### 判断表达式是否为真/console.assert()
+
+```javascript
+// 判断表达式是否为真
+console.assert(true);
+console.assert(1);
+console.assert(true == false);
+```
+
+#### 将数据表格打印/console.table()
+
+```javascript
+// 将数据表格打印
+var data = [
+  {'索引':'1','名称':'蛋糕','数量':5},
+  {'索引':'2','名称':'啤酒','数量':2}
+];
+console.table(data);
+```
+
+#### 计时/console.time()
+
+```javascript
+console.time('time-1');
+for (let i = 0; i < 5; i++) {
+  console.log(i);
+}
+console.timeEnd('time-1');
+```
+
+#### 清空控制台/console.clear()
+
+```javascript
+// 清空控制台
+console.clear();
+```
+
+#### 输出样式
+
+```javascript
+console.log('%cHello World!', 'font-size:50px; color:green;')
+```
+
+#### 性能分析器/console.profile()
+
+```javascript
+function All(){
+  for(var i=0;i<10;i++){
+    funcA(2);
+    console.log('----------');
+  }
+  funcB(20);
+}
+
+function funcA(count){
+  for(var i=0;i<count;i++){
+    console.log(i);
+  }
+}
+
+function funcB(count){
+  for(var i=0;i<count;i++){
+    console.log(i);
+  }
+}
+
+console.profile('性能分析器');
+All();  // funA 执行10次, funB打印20个数
+console.profileEnd('性能分析器');
+```
+
+
+
