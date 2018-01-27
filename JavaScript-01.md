@@ -675,7 +675,7 @@ if (value) {
 
 > **注意**：定义标识符时不要使用关键字和保留字。
 
-### 13.字符串操作
+### 13.字符串操作内置函数和方法
 
 ```javascript
 <script type="text/javascript">
