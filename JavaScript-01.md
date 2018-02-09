@@ -677,9 +677,30 @@ if (value) {
 
 ### 13.字符串操作内置函数和方法
 
+- 返回字符串对象原始值: valueOf()
+- 转换为字符串,每中类型都有的方法, toString()
+- 获得字符串指定位置的字符值 charAt()
+- 数组转换为字符串的方法: join()
+- 字符串分割为数组: split()
+- 获得字符的 Unicode 编码: charCodeAt()
+- 通过 Unicode 编码获得相应的字符: fromCharCode()
+- 字符串截取: subString(开始位置,结束位置) 两个参数,顺序随意,可以自己比较,单个参数截取到最后,不支持负数,负数原样输出
+- 字符串截取: slice() 参数1:开始位置(包含),参数2:结束位置(不包含),支持单个参数,支持负数,顺序不能反
+- 字符串截取: substr(开始位置,截取长度),不是标准,但是浏览器支持,支持的单个参数,支持负数参数
+- 查找指定字符或者字符串: indexOf()  返回值,如果找到,返回第一个字符下标,没有返回 -1
+- 查询字符或者字符串: search()  和 indexOf 的功能相似,但是 indexOf 效率更高, indexOf 不支持正则, search() 支持正则,正则也是只能找到第一次匹配的下标,返回值是下标
+- 查找字符和字符串: match() 匹配正则进行查找,返回值是一个数组,数组里存储的是匹配的字符
+- 去除首尾空格: trim()
+- 转换为大写字符: toUpperCase()
+- 转换为小写字符: toLowerCase()
+- 替换字符串 replace() 参数1:旧字符串 参数2:新字符串, 返回的字符串不会引起原字符串的改变
+
 ```javascript
 <script type="text/javascript">
-// onload 页面加载完毕之后
+  
+console.log(names.valueOf());  // frankSun
+  
+  // onload 页面加载完毕之后
 onload = function(){
 
 //HTML DOM document对象
