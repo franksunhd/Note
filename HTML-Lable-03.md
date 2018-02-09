@@ -39,6 +39,13 @@
 
 <!--在上面的语法中，
 <input />标记为单标记，type属性为其最基本的属性，其取值有多种，用于指定不同的控件类型。
+-->
+
+// 如何处理 input 表单获取焦点之后的 黄色背景
+input:-webkit-autofill {
+	-webkit-box-shadow: 0px 0px 0px 100px white inset;
+	border:1px solid #ccc !important;
+}
 ```
 
 - 除了type属性之外，\<input />标记
