@@ -1,4 +1,4 @@
-## HTML5 新标签
+## HTML5 新标签/URL(统一资源定位符)/HTML 5 Web存储
 
 [TOC]
 
@@ -164,17 +164,134 @@ hello Henry,<wbr>welcome to beijing.
 </video>
 ```
 
+## URL(统一资源定位符)
 
+```javascript
+var a = new URL("/", "https://developer.mozilla.org");
+console.log(a.toString());  // https://developer.mozilla.org/
 
+var b = new URL("https://developer.mozilla.org");
+console.log(b.toString());    // https://developer.mozilla.org/
 
+var c = new URL('en-US/docs', b);
+console.log(c.toString());    // https://developer.mozilla.org/en-US/docs
 
+var d = new URL('/en-US/docs', b);
+console.log(d.toString());      //https://developer.mozilla.org/en-US/docs
 
+var f = new URL('/en-US/docs', d);
+console.log(f.toString()); // https://developer.mozilla.org/en-US/docs
 
+var g = new URL('/en-US/docs', 'https://developer.mozilla.org/fr-FR/toto');
+console.log(g.toString());   // https://developer.mozilla.org/en-US/docs
 
+var h = new URL('/en-US/docs', a);
+console.log(h.toString());  // https://developer.mozilla.org/en-US/docs
 
+var k = new URL('http://www.example.com', 'https://developers.mozilla.com');
+console.log(k.toString());  // http://www.example.com
 
+var l = new URL('http://www.example.com', b);
+console.log(l.toString());  //http://www.example.com
+```
 
+## HTML 5 Web存储
 
+### localStorage 用于没有时间限制的数据存储
+
+- 本地持久存储, HTML5 新方法,只有标准浏览器支持
+- 存储在了本地的浏览器目录中,不同浏览器不能共享localStorage 数据
+- 因为持久存储,所以需要手动清除
+- 可以在一个网站下实现页面之间数据的交互(页面之间是共享的,可以互相修改的)
+- 同一个网站不同的页面之间的通信,也可以使用 localStorage.search
+
+```javascript
+console.log(localStorage);		
+localStorage.name = "孙素";
+console.log(localStorage.name);  // 孙素
+```
+
+#### 保存数据 localStorage.setItem(key,value)
+
+#### 读取数据 localStorage.getItem(key)
+
+#### 删除单个数据 localStorage.removeItem(key)
+
+#### 清空所有数据 localStorage.clear()
+
+#### 得到某个索引的key localStorage.key(index)
+
+- 任意类型存储到 localStorage 都会被转换为 字符串类型
+
+```javascript
+localStorage.setItem("key0", 0);
+localStorage.setItem("key1", 1);
+localStorage.setItem("key2", 2);
+console.log(localStorage.key0);  // 0
+
+console.log(localStorage.age);
+
+localStorage.age = 20;
+// 任意类型存储到 localStorage 都会被转换为 字符串类型
+localStorage.hobby = ["抽烟","喝酒","烫头"];
+console.log(localStorage.hobby);  // 抽烟,喝酒,烫头
+```
+
+```javascript
+/*
+代码必须在服务器上测试，本地测试是不会触发的
+当localStorage的值被其他页面修改时，当前页面的该事件会触发
+如果是自己修改的，那么自己的事件不会触发
+*/
+window.onstorage = function(event){
+  // 01页面
+  console.log("event.key ", event.key);
+  console.log("event.oldValue", event.oldValue);
+  console.log("event.newValue", event.newValue);
+}
+```
+
+```javascript
+/*********************页面1*********************/
+<body>
+    <div id="box">
+        <input type="text" name="user" id="user" value="蓝海"/>
+        <button onclick="save()">保存</button>
+    </div>
+    <p>
+        <a href="09-storage2.html" id="show" target="_blank">展示</a>
+    </p>
+    <script type="text/javascript">
+        var users = null;
+        // 旧的数据读出来
+        var oldValue = localStorage.users;
+        if(oldValue) {
+            users = oldValue.split(",");
+        } else {
+            // undefined
+            users = [];
+        }
+        function save(){
+            users.push(user.value);
+            // 数组存在本地
+            localStorage.users = users;
+        }
+    </script>
+</body>
+/**********************页面2**************************/
+<body>
+    <ol id="list"></ol>
+    <script type="text/javascript">
+        var newArr = localStorage.users === undefined ? [] : localStorage.users.split(",");
+        console.log(newArr);
+        for(var i = 0, len = newArr.length; i < len; i++) {
+            var lis = document.createElement("li");
+            lis.innerText = newArr[i];
+            list.appendChild(lis);
+        }
+    </script>
+</body>
+```
 
 
 
