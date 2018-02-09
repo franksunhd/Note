@@ -157,6 +157,50 @@ text-shadow: -1px -1px 1px #000, 1px 1px 1px #FFF;
 }
 ```
 
+#### CSS3字体
+
+```css
+<style type="text/css">
+@font-face {
+    font-family:"ST";
+    src: url("./font/burnstowndam.ttf");
+}	
+
+@font-face {
+    font-family: 'webfont';
+    src: url('//at.alicdn.com/t/webfont_opza7ws9dmbwqaor.eot');
+    /* IE9*/
+    src: url('//at.alicdn.com/t/webfont_opza7ws9dmbwqaor.eot?#iefix') format('embedded-opentype'),
+    /* IE6-IE8 */
+    url('//at.alicdn.com/t/webfont_opza7ws9dmbwqaor.woff') format('woff'),
+    /* chrome、firefox */
+    url('//at.alicdn.com/t/webfont_opza7ws9dmbwqaor.ttf') format('truetype'),
+    /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+    url('//at.alicdn.com/t/webfont_opza7ws9dmbwqaor.svg#NotoSansHans-Black') format('svg');
+    /* iOS 4.1- */
+}
+
+#box{
+    font-size: 30px;
+    font-family: "ST";
+}
+
+#boxp {
+    font-size: 30px;
+    font-family: "webfont";
+}
+</style>
+
+<div id="box">
+    知识就像内-裤，看不见但很重要。
+    <br />
+    This is a name.
+</div>
+<p id="boxp">别跟我谈感情，谈感情伤钱。随便打几个字</p>
+```
+
+[](http:)
+
 ### 7.CSS 3 怪异盒子
 
 #### 指定盒子类型(box-sizing)
