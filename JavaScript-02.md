@@ -683,7 +683,7 @@ aa.shift("http");
 alert(aa);
 ```
 
-##### 替换~splice
+##### 添加/删除~splice
 
 - splice:添加删除到数组的指定位置
 
@@ -704,49 +704,69 @@ aa[4] = null;  //将e替换为null
 alert(aa);
 ```
 
-##### 切片~slice
+##### 数组切片~slice
 
 - slice() 方法返回一个从开始到结束（**\*不包括结束***）选择的数组的一部分**浅拷贝**到一个新数组对象。例如:[2,8)从2到8,包括 2 不包括 8 .
 
 ##### 拼接数组~concat
 
-##### 翻转字符串~reverse
+- 这个操作相当于重新拷贝了一份对新数组的操作不会影响原来的数组
+
+##### 数组元素倒序~reverse
+
+- 数组的内置方法
 
 ##### 排序~sort
 
-##### 更换间隔符~join("-")
+- 数组特有的方法,集合没有排序算法, arguments对象也没有
 
-```html
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>数组的声明和长度</title>
-    <script type="text/javascript">
-      //声明数组
-      var a = ["a","b","c","d","e","f","g","h"];
-      
-      //取出指定索引的子串 [1,3)
-      var b = a.slice(1,3);
-      alert(b);
-      
-      //拼接数组
-      var c = a.concat(1,2,3,4,5);
-      alert(c);
+```javascript
+var names = ["xiaoma","china","mother","apple","banner",];
+console.log(names);
+console.log(names.sort());
+// 排序会引起内存的改变
+console.log(names);
 
-      //翻转字符串
-      c.reverse();
-      alert(c);
+var numbers = [10,20,100,2];
 
-      //排序
-      c.sort();
-      alert(c.join("-"));
-    </script>
-  </head>
-  <body>
-    <h1>数组的声明和长度</h1>
-  </body>
-</html>
+numbers.sort(function(a,b) {
+    console.log(a,b);
+    //  升序排列
+    return a > b;
+    // 降序排列
+    // return a < b;
+});
+
+console.log(numbers);
+```
+
+##### 数组中查询指定的字符串~indexOf
+
+```javascript
+var fruits = ["apple","banana","pire"];
+fruits.indexOf("apple");
+```
+
+##### 数组转字符串~join("-")
+
+```javascript
+//声明数组
+var a = ["a","b","c","d","e","f","g","h"];
+
+//取出指定索引的子串 [1,3)
+var b = a.slice(1,3);
+alert(b);
+
+//拼接数组
+var c = a.concat(1,2,3,4,5);
+alert(c);
+
+//翻转字符串
+c.reverse();
+
+//排序
+c.sort();
+alert(c.join("-"));
 ```
 
 ### 6.break-continue-return的用法
