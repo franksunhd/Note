@@ -15,6 +15,8 @@
 > ​	jQuery项目主要包括jQuery Core(核心库), jQuery UI(界面库), Sizzle(CSS选择器)和Qunit(测试套件)四部分, 现在又增加了一个新的部分就是 jQuery Mobile(手机端).
 >
 > ​	jQuery 等价于 $ 符号;
+>
+> ​	jQuery的核心特性可以总结为：具有独特的链式语法和短小清晰的多功能接口；具有高效灵活的css选择器，并且可对CSS选择器进行扩展；拥有便捷的插件扩展机制和丰富的插件。jQuery兼容各种主流浏览器，如IE 6.0+、FF 1.5+、Safari 2.0+、Opera 9.0+等
 
 - jQuery的特点：javascript库，体积小，功能丰富，使用简单，**兼容性好(兼容众多浏览器)**。
 
@@ -22,7 +24,7 @@
 
 > ​	CDN的全称是Content Delivery Network，即**内容分发网络**。其基本思路是尽可能避开互联网上有可能影响数据传输速度和稳定性的瓶颈和环节，使内容传输的更快、更稳定。通过在网络各处放置**节点服务器**所构成的在现有的互联网基础之上的一层智能**虚拟网络**，CDN系统能够实时地根据[网络流量](https://baike.baidu.com/item/%E7%BD%91%E7%BB%9C%E6%B5%81%E9%87%8F)和各节点的连接、负载状况以及到用户的距离和响应时间等综合信息将用户的请求重新导向离用户最近的服务节点上。其目的是使用户可就近取得所需内容，解决 Internet网络拥挤的状况，提高用户访问网站的响应速度。
 
-```html
+```javascript
 <!--
     1. 使用CDN 引入jQuery(必须有网络)
     2. 引入本地文件
@@ -32,6 +34,30 @@
   <!-- 引入外部js文件之后，该script中不要写代码  -->
 
   <script src="./jquery.min.js"></script>
+
+console.log(jQuery); // ƒ (a,b){return new r.fn.init(a,b)}
+console.log($);  // ƒ (a,b){return new r.fn.init(a,b)}
+console.log($ === jQuery);  // true
+
+// 选择器,返回一个 JQ 封装的对象
+var eles = $("p");
+console.log(eles,typeof eles); // jquery对象  "object"
+
+// 原生
+$("#box p")[0].style.border = "3px solid blue";
+// jq,默认循环设置所有
+$("#box p").css("border","3px solid pink");
+
+// get() 获取原生对象
+// jq转换为原生
+$("#box p").get(1).style.fontSize = "30px";
+// 不给参数,返回数组,获取选中的元素数组
+console.log($("#box p").get());
+$("#box p").get().reverse()[0].style.color = "pink";
+
+// 原生转换为jq
+var ele = document.getElementById('box1');
+$(ele).css("font-size","30px");
 ```
 
 ### 2.基本选择器(*/标签/类/id/后代)--和CSS一致
@@ -301,15 +327,15 @@ $("[name|=on]").css("font-size", "50px");
 
 ### 6.jQuery中特有的选择器
 
-#### :even 偶数(下标从0开始)
+#### :even 索引为偶数(下标从0开始)
 
 - 选择所引值为偶数的元素，从 0 开始计数。
 
-#### :odd 奇数
+#### :odd 索引为奇数
 
 - 选择索引值为奇数元素，从 0 开始计数。
 
-#### :eq(index)index,下标从0开始
+#### :eq(index)  index,下标从0开始
 
 - 在匹配的集合中选择索引值为`index`的元素
 
@@ -319,7 +345,18 @@ $("[name|=on]").css("font-size", "50px");
 
 #### :first() 第一个
 
-- 选择第一个匹配的DOM元素。
+- 选择第一个匹配的DOM元素.
+
+```javascript
+// :first 区别: first只能匹配一个, first-child 可以匹配多个
+$("li:first").css("font-size","30px");
+// :first-child
+$("li:first-child").css("color","red");
+```
+
+#### :gt()  大于
+
+#### :lt()  小于
 
 #### :last() 最后一个
 
