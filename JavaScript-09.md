@@ -1,4 +1,4 @@
-## BOM对象/浏览器对象/window对象方法及属性
+## BOM对象/浏览器对象/window对象方法及属性/Cookie
 
 [TOC]
 
@@ -345,3 +345,74 @@ console.log("屏幕分辨率的宽度:",window.screen.width,"高度:",window.scr
 */
 console.log("屏幕可用工作区的宽度:",window.screen.availWidth,"高度:",window.screen.availHeight);
 ```
+## JavaScript Cookie
+
+### 1. 什么是 Cookie?
+
+- Cookie 持久性存储,用于存储 web 页面的用户信息。兼容性好,但是使用比较麻烦
+- Cookie 是一些数据, 存储于你电脑上的文本文件中。
+- 当用户访问 web 页面时，他的名字可以记录在 cookie 中。在用户下一次访问该页面时，可以在 cookie 中读取用户访问记录。
+- Cookie 以名/值对形式存储
+- 存储时间:默认杀死浏览器,自动清空
+
+```json
+username = John Doe 
+```
+
+- 特点:当浏览器从服务器上请求 web 页面时， 属于该页面的 cookie 会被添加到该请求中。服务端通过这种方式来获取用户的信息。
+
+### 2.获取 Cookie
+
+```javascript
+console.log(document.cookie);
+console.log(typeof document.cookie);  // string
+```
+
+### 3.创建 Cookie
+
+```javascript
+document.cookie = "username = Frank sun";
+document.cookie = "age = 18";
+// 不能直接存储汉字
+// document.cookie = "hobby = 喝酒";
+
+// escape() 转义字符
+var firstName = escape("杨");
+console.log(firstName);  // %u6768
+
+// 解码为汉字
+var firstNameEnd = unescape(firstName);
+console.log(firstNameEnd);
+
+document.cookie = "hobby =" + escape("喝酒");
+
+// 不能一次写入多个,只有第一个有效 
+document.cookie = "height = 190;weight = 65Kg";
+```
+
+### 4.expires 有效期  / max-age
+
+```javascript
+// 注意:设置过期时间cookie 需要参照格林尼治时间,在需要设置的事件的基础上减去8小时
+// 如有效期至 2018-02-26 17:49:00,需设置 2018-02-26 09:49:00
+var NowDate = new Date("2018-02-26 09:49:00");
+console.log(NowDate);
+document.cookie = "weight = 65Kg; expires = " + NowDate.toString();
+
+var NowDate = new Date("2018-02-26 17:49:00");
+// toGMTString 转换为格林尼治时间
+console.log(NowDate.toGMTString());
+document.cookie = "weight = 65Kg; expires = " + NowDate.toGMTString();
+
+// 删除 cookie: 给定过期时间
+document.cookie = "age = 80; expires = " + NowDate;
+
+// 设置有效期 max-age = 秒数 ; 
+// 设置10秒过期  
+// 1天 = 60*60*24s = 86400s
+document.cookie = "name = ssy; max-age = 10";
+
+// 使用 max-age 删除 cookie: 给值设置 0 或者是负数
+document.cookie = "name = frank; max-age = 0";
+```
+
