@@ -197,7 +197,17 @@ console.log(l.toString());  //http://www.example.com
 
 ## HTML 5 Web存储
 
-### localStorage 用于没有时间限制的数据存储
+```javascript
+if(typeof(Storage)!=="undefined")
+{
+    // 是的! 支持 localStorage  sessionStorage 对象!
+    // 一些代码.....
+} else {
+    // 抱歉! 不支持 web 存储。
+}
+```
+
+### 1. localStorage 用于没有时间限制的数据存储
 
 - 本地持久存储, HTML5 新方法,只有标准浏览器支持
 - 存储在了本地的浏览器目录中,不同浏览器不能共享localStorage 数据
@@ -293,9 +303,9 @@ window.onstorage = function(event){
 </body>
 ```
 
+### 2. sessionStorage  针对一个 session 的数据存储
 
-
-
+- sessionStorage 方法针对一个 session 进行数据存储。当用户关闭浏览器窗口后，数据会被删除。
 
 
 
