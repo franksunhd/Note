@@ -115,7 +115,7 @@ function handlerClick(){
 </html>
 ```
 
-#### 5.鼠标悬停事件mouseover()/鼠标离开事件mouseout()
+#### 5.mouseover()鼠标悬停事件/mouseout()鼠标离开事件
 
 ```javascript
 <!DOCTYPE html>
@@ -161,41 +161,26 @@ function handlerClick(){
 </html>
 ```
 
-#### 6.hover()
-
-- 将二个事件函数绑定到匹配元素上，分别当鼠标指针进入和离开元素时被执行。
+#### 6.resize() 浏览器窗口大小改变时触发
 
 ```javascript
-	<div class="one"></div>
-
-    <script src="../jquery.min.js" charset="utf-8"></script>
-    <script type="text/javascript">
-	
-    /*
-    hover相当于 mouseout mouseover合体
-    根据实际需求传入处理函数,可以使用null代替空函数
-    */
-    $(".one").hover(function(){
-      $(".one").css("background-color", "blue");
-    }, function(){
-      $(".one").css("background-color", "red");
-    });
-
-
-    </script>
+$(window).resize(function(){
+    console.log("窗口变化!",$(window).innerWidth());
+    // 改布局,改html根字体大小
+});
 ```
 
 ### 键盘事件
 
-#### 1.按下事件keydown()
+#### 1.keydown() 按下事件
 
 - keysdown()识别所有按键
 
-#### 2.按下事件keypress()
+#### 2.keypress() 按下事件
 
 - keypress() 识别字母数字键
 
-#### 3.抬起事件keyup()
+#### 3.keyup() 抬起事件
 
 ```html
 <!DOCTYPE html>
@@ -232,7 +217,7 @@ function handlerClick(){
 </html>
 ```
 
-### 事件绑定 on()方法
+### 事件绑定
 
 #### on()方法
 
@@ -242,6 +227,23 @@ function handlerClick(){
 - 使用on方法进行事件绑定,通用的事件绑定方法
 - on方法可以自定义事件
 - on方法也可以绑定多个事件处理函数
+
+```javascript
+$("#box p:first").on("contextmenu click mouseover dblclick",123,function(ev) {
+    ev.preventDefault();
+    console.log(ev.data);  // 123
+    console.log(ev.type);
+});
+```
+
+#### one() 只响应一次
+
+```javascript
+// one 只响应一次
+$("#box p").eq(1).one("click",function(ev) {
+    alert("只响应一次");
+});
+```
 
 #### trigger()方法～触发自定义的事件
 
@@ -306,21 +308,16 @@ function handlerClick(){
 </html>
 ```
 
-### 解除事件绑定 off()方法
-
-#### off()方法
+#### off() 解除事件绑定
 
 - 移除一个事件处理函数。
 
-```html
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>off解除事件绑定</title>
-  </head>
-  <body>
-
+```javascript
+// off: 解除绑定
+// 不给参数:删除所有事件
+// 参数1:事件类型 参数2:事件地址
+$("#box p").eq(1).off("click");
+/******************************/
     <button id="btn">按钮</button>
 
     <script src="../jquery.min.js" charset="utf-8"></script>
@@ -350,9 +347,42 @@ function handlerClick(){
      //off没有参数，那么移除该元素上的所有事件的所有函数
      $("#btn").off();
    });
-    </script>
-  </body>
-</html>
+```
+
+### 事件切换
+
+#### hover()
+
+- 将二个事件函数绑定到匹配元素上，分别当鼠标指针进入和离开元素时被执行。
+
+```javascript
+$("#box p").eq(2).hover(function(ev) {
+    $(this).text(ev.type);
+    console.log(ev.type);
+});
+
+// hover 相当于 mouseenter 和 mouseleave,不是 mouseover 和 mouseout
+
+$("#box p").eq(0).on("mouseover mouseout",function (ev) {
+    $("#box p").eq(3).slideToggle(200);
+});
+
+/****************************/
+
+<div class="one"></div>
+<script src="../jquery.min.js" charset="utf-8"></script>
+<script type="text/javascript">
+
+/*
+hover相当于 mouseout mouseover合体
+根据实际需求传入处理函数,可以使用null代替空函数
+*/
+$(".one").hover(function(){
+  $(".one").css("background-color", "blue");
+}, function(){
+  $(".one").css("background-color", "red");
+});
+</script>
 ```
 
 ### 表单事件
