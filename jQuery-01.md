@@ -448,3 +448,9 @@ $("li:first-child").css("color","red");
 #### 2.浏览器的加载与渲染过程
 
 [原文链接](./onload.md)
+
+#### 3. $(document).ready() 和 window.onload 的区别
+
+- [链接](http://blog.csdn.net/zndxlxm/article/details/7404758)
+- 一是ready，表示文档结构已经加载完成（不包含图片等非文字媒体文件），
+- 二是onload，指示页面包含图片等文件在内的所有元素都加载完成。
