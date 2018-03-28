@@ -65,7 +65,7 @@ $("#box button").eq(7).click(function() {
 });
 ```
 
-#### fadeTo() 
+#### fadeTo() 第二个参数是透明度 
 
 ```javascript
 $("#box button").eq(8).click(function() {
