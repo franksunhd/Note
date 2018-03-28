@@ -1,4 +1,4 @@
-## CSS文本属性/文本外观属性/背景属性
+## CSS文本属性/文本外观属性/背景属性/滤镜效果
 
 [TOC]
 
@@ -162,6 +162,18 @@ text-decoration: underline overline line-through;
 - **bottom： 将支持valign特性的对象的文本与对象底端对齐**
 - text-bottom： 将支持valign特性的对象的文本与对象顶端对齐
 
+```css
+.middle:before{
+	content:"" ;
+	background: #dac;
+	display: inline-block;
+	height: 100%;
+	visibility: hidden;
+	vertical-align:middle;
+	width: 0px;
+}
+```
+
 ###  8.首行缩进 text-indent
 
 －	text-indent属性用于设置首行文本的缩进，其属性值可为不同单位的数值、**em字符**宽度的倍数、或相对于浏览器窗口宽度的百分比%，允许使用负值, 建议使用em作为设置单位。
@@ -294,6 +306,75 @@ background-size: 100% 100%;
 
 - 值为０，不显示。
 - 不适合的情况：只想使背景透明，文本无影响。
+
+
+### css 滤镜效果
+
+#### 高斯模糊 filter:blur(10px);
+
+```javascript
+// 高斯模糊
+btns.eq(1).click(function(){
+    $("img").css({
+        "filter":"blur(10px)"
+    });
+});
+```
+
+#### 复古 filter:sepia(100%)
+
+```javascript
+// 复古
+btns.eq(2).click(function(){
+    $("img").css({
+        "filter":"sepia(100%)"
+    });
+});
+```
+
+#### 饱和度 filter:saturate(700%)
+
+```javascript
+// 饱和度
+btns.eq(3).click(function(){
+    $("img").css({
+        "filter":"saturate(700%)"
+    });
+});
+```
+
+#### 图像阴影 filter:drop-shadow()
+
+```javascript
+// 阴影
+btns.eq(4).click(function(){
+    $("img").css({
+        "filter":"drop-shadow(8px,8px,10px,red)"
+    });
+});
+```
+
+#### 图像透明 filter:opacity(30%)
+
+```javascript
+// 透明
+btns.eq(5).click(function(){
+    $("img").css({
+        "filter":"opacity(30%)";
+    });
+});
+```
+
+[菜鸟教程实例](http://www.runoob.com/cssref/css3-pr-filter.html)
+
+
+
+
+
+
+
+
+
 
 
 
