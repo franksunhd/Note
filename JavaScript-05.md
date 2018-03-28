@@ -301,6 +301,23 @@ b.forEach(function(current,index,err){
 });
 ```
 
+#### for in
+
+```javascript
+var obj = {
+    name:'悟空',
+    age:234,
+    job:'取经'
+}
+
+for(var keys in obj) {
+    console.log(keys + '=' + obj[keys]);  
+}
+// name=悟空
+// age=234
+// job=取经
+```
+
 #### map()
 
 - map 需要每次返回,将返回的数据共同组成一个新的数组
