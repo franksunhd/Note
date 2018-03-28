@@ -308,6 +308,20 @@ window.onstorage = function(event){
 - sessionStorage 方法针对一个 session 进行数据存储。当用户关闭浏览器窗口后，数据会被删除。
 
 
+```html
+<!--
+localStorage:
+	1.目前:50MB
+	2.永久存储,不会自动清除,需要手动清除(用户直接在浏览器删除/开发者代码删除), 不清除的话,永久保存在本地
+sessionStorage:
+	1.目前:50MB
+	2.关闭浏览器,缓存自动清除,再次打开浏览器没有记录
+cookie:
+	1.大小:4KB
+	2.可以设置缓存的有效期,一般是以秒作为单位,
+-->
+```
+
 
 
 
