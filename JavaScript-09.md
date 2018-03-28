@@ -64,7 +64,7 @@ img.onload = function() {
 }
 ```
 
-### window.addEventListener
+### window.addEventListener("DOMContentLoaded") DOM内容被加载完
 
 ```javascript
 // DOM内容被加载完
@@ -354,6 +354,7 @@ console.log("屏幕可用工作区的宽度:",window.screen.availWidth,"高度:"
 - 当用户访问 web 页面时，他的名字可以记录在 cookie 中。在用户下一次访问该页面时，可以在 cookie 中读取用户访问记录。
 - Cookie 以名/值对形式存储
 - 存储时间:默认杀死浏览器,自动清空
+- 只能存储4KB
 
 ```json
 username = John Doe 
