@@ -5,6 +5,11 @@
 ![](https://img.shields.io/github/issues/wangleihd/freeBook-H5.svg)![](https://img.shields.io/github/forks/wangleihd/freeBook-H5.svg)![](https://img.shields.io/github/stars/wangleihd/freeBook-H5.svg)![](https://travis-ci.org/wangleihd/freeBook-H5.svg?branch=master)![](https://img.shields.io/github/release/wangleihd/freeBook-H5.svg)
 
 - [Ajax应用](./ajax-01.md)
+- [PHP中与ajax的交互](./ajax-02.md)
+
+
+
+
 - [BFC--块级格式化范围](./BFC.md)
 - [BootStrap/起步/全局CSS样式(栅格系统/排版/表格/表单/按钮/图片/响应式工具/代码块)](./BootStrap-01.md)
 - [BootStrap组件/字体图标](./BootStrap-02.md)
@@ -27,7 +32,7 @@
 
 
 - [CSS层叠样式表(作用/规则/选择器/样式类型/三大特性)](./CSS-01.md)
-- [CSS文本属性/文本外观属性/背景属性](./CSS-02.md)
+- [CSS文本属性/文本外观属性/背景属性/css滤镜](./CSS-02.md)
 - [CSS盒子模型/浮动问题/定位问题](./CSS-03.md)
 - [CSS中可以和不可以继承的属性](./CSS-04.md)
 - [CSS预处理器](./CSS-05.md)
@@ -49,6 +54,7 @@
 - [JavaScript高级程序设计](./JavaScript.md)
 - [BOM 对象/window属性/window方法](./JavaScript-09.md)
 - [JavaScript移动端事件](./JavaScript-10.md)
+- [ES6语法](./ES6.md)
 
 
 
@@ -61,6 +67,16 @@
 - [jQuery中的效果](./jQuery-06.md)
 
 
+- [ZepTo.js](./Zepto.md)
+
+
+- [php 基础知识/输出语句/变量/常量/数据类型/类型转换/运算符](./php-01.md)
+- [php分支语句/循环语句/字符串函数/数组函数](./php-02.md)
+- [PHP 数学方法/时间/函数文件引入/php函数/JSON](./php-03.php)
+- [PHP 文件操作/目录操作/追加内容](./php-04.md)
+- [PHP 类/继承/MYSQL数据库操作/PHP数据库操作/上传头像](./php-05.md)
+- [sqlite3数据库](./sqlite.md)
+
 
 
 - [详解浏览器的渲染页面过程/控制台输出](./onload.md)
@@ -69,13 +85,31 @@
 - [面试问题总结](./imterview.md)
 - [第一次考试](./Exam-01(08-25).md)
 - [第二次考试](./Exam-02(09-08).md)
-- [sqlite3数据库](./sqlite.md)
 - [SEO](./SEO.md)
-- [NodeJs](./node-01.md)
 - [HTTP协议](./HTTP.md)
+
+
+
 - [Canvas](./Canvas.md)
 - [SVG](./SVG.md)
-- [ZepTo.js](./Zepto.md)
+
+
+
 - [微信公众号的开发](./WeChat-01.md)
 
 
+
+- [微信小程序的开发](.wx-01.md)
+- [微信小程序的组件](./wx-02.md)
+
+
+
+
+- [HTML5插件分享](./HTML5-plug.md)
+- [技术视频全分享](./skill-share.md)
+- [JS 正则表达式](./RegExp.md)
+
+
+
+- [NodeJs基础模块](./node-01.md)
+- [Path 模块 / jsonp跨域 /express(nodeJs的框架)](./node-02.md)
