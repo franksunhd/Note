@@ -105,7 +105,7 @@
 
 #### 1.7 其他运算符
 
-
+- 逗号运算符,最后一个逗号起作用
 
 ### 2.逻辑判断语句
 
@@ -531,6 +531,16 @@ function fun(arg1,arg2) {
        console.log(arguments[1]);		//2
    }
 fun(1,2);
+
+// arguments.callee 代表函数本身
+function aa(n){
+    if (n == 1) {
+        return n;
+    }
+    return n * arguments.callee(n-1);
+}
+
+aa(2);
 ```
 
 #### 变量声明提升
@@ -855,5 +865,68 @@ var numbers = [20,50,30,10];
 
         // 打印数组信息
 		console.log(numbers);
+```
+
+### 11.声明提升的综合练习
+
+```javascript
+<script type="text/javascript">
+    /*
+    function Foo() {
+        getName = function() {
+            alert(1);
+        };
+        return this;
+    }
+    Foo.getName = function() {
+        alert(2);
+    };
+    Foo.prototype.getName = function() {
+        alert(3);
+    };
+    var getName = function() {
+        alert(4);
+    };
+
+    function getName() {
+        alert(5);
+    }
+    */
+    // 等价代码
+    var getName;
+    function Foo() {
+        getName = function() {
+            alert(1);
+        };
+        return this;
+    }
+
+    function getName() {
+        alert(5);
+    }
+
+    Foo.getName = function() {
+        alert(2);
+    };
+    Foo.prototype.getName = function() {
+        alert(3);
+    };
+
+    getName = function() {
+        alert(4);
+    };
+
+    Foo.getName(); // 2
+    getName(); // 4  先是5后来4立马把5覆盖了
+
+    Foo().getName(); // => == window.getName() == function(){ alert(1); };  1
+    // 先执行 Foo()函数,给全局的 getName变量赋值了一个函数,返回的 this 指的是 window对象
+    // window.getName() ==> function(){ alert(1); }; 所以打印1
+
+    getName(); // 1  上一步把全局的 getName 值给改了,没有上一步,直接打印 4
+    new Foo.getName(); // 2  new一个新对象 把 Foo.getName当做一个对象
+    new Foo().getName(); // 3 先 new Foo() 再找 getName()
+    new new Foo().getName(); // 3 先 new Foo() 再找 getName() 最后 new 这个函数
+</script>
 ```
 
