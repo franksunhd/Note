@@ -376,8 +376,6 @@ while(arr.length <= 6){
 alert(arr);
 ```
 
-未完...
-
 ### JS Number对象
 
 - Number 对象是原始数值的包装对象。
@@ -392,8 +390,6 @@ var num3 = Number("000011");		//11
 var num4 = Number(true);			//1
 ```
 
-未完...
-
 ### JS String对象
 
 - String 对象用于处理文本（字符串）。
@@ -403,8 +399,6 @@ var sString = new String(s);
 var sString = String(s);
 ```
 
-未完...
-
 ### JS RegExp对象
 
 - RegExp 对象表示正则表达式，它是对字符串执行模式匹配的强大工具。
@@ -412,6 +406,3 @@ var sString = String(s);
 ```javascript
 
 ```
-
-未完....
-
