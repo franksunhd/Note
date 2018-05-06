@@ -317,3 +317,77 @@ app.listen(8080);
 console.log("服务启动成功!");
 ```
 
+### 4. Jquery 和 nodeJs 链接实现注册功能
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>post提交</title>
+    <link rel="stylesheet" href="01-post.css">
+</head>
+<body>
+    <div id="box" class="wp">
+        姓名: <input type="text" name="username" id="user" value="">
+        年龄: <input type="text" name="age" id="age" value="">
+        <input type="file" name="pic" id="pic">
+        <input type="submit" value="提交" id="btn">
+        <div id="msg"></div>
+    </div>
+</body>
+</html>
+<script type="text/javascript" src="./jquery-3.1.1.js"></script>
+<script type="text/javascript">
+    $(function(){
+       // post提交
+       $("#btn").click(function () {
+            $.post('/post',{
+                name:$('#user').val(),
+                age:$('#age').val()
+            },function (data) {
+                $('#msg').text(data);
+            });
+       });
+    });
+</script>
+```
+
+```css
+.wp {
+    padding: 20px;
+    border: 2px solid #0f0;
+}
+```
+
+```javascript
+var express = require('express');
+var querystring = require('querystring');
+var app = new express();
+
+app.post('/post',function (req,res) {
+    res.setHeader('content-type','text/html;charset=utf-8');
+    // data 方法可以获取 post 数据,把 post 数据分块接收,也可以说把 post 数据分包发送
+    var postData = '';
+    req.on("data",function (chunk) {
+        postData += chunk;
+    });
+
+    // 使用 end 方法判断 data 方法执行完毕,执行完毕之后对数据进行处理
+    req.on('end',function () {
+        var obj = querystring.parse(postData);
+        res.end("你的名字是:" + obj.name + ",今年" + obj.age + "岁了!");
+    });
+});
+
+// 加载资源
+app.get("*",function (req,res) {
+    res.sendFile(__dirname + req.path);
+});
+
+app.listen(8080);
+console.log("服务启动成功!");
+```
+
+
+
