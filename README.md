@@ -123,7 +123,7 @@
 
 
 - [Angular1基础内容](./Angular1.md)
-- [Angular5](./Angualr5-01.md)
+- [Angular5](./Angular5-01.md)
 
 
 - [Vue基础第一天](./Vue-01.md)
